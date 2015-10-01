@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_MainForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.startDate_DT = new System.Windows.Forms.DateTimePicker();
             this.endDate_DT = new System.Windows.Forms.DateTimePicker();
@@ -1212,9 +1213,10 @@
             this.Controls.Add(this.startDate_DT);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form_MainForm";
-            this.Text = "Form_MainForm";
+            this.Text = "Safeway Manila - Workbrain Archiving Tool";
             this.Load += new System.EventHandler(this.Form_MainForm_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
