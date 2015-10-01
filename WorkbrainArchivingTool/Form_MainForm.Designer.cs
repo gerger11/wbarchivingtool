@@ -131,7 +131,11 @@
             this.label29 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label30 = new System.Windows.Forms.Label();
+            this.archivingTasksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutTheToolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutTheToolToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -143,6 +147,9 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.archivingTasksToolStripMenuItem,
+            this.aboutTheToolToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(726, 24);
@@ -1185,21 +1192,38 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // label30
+            // archivingTasksToolStripMenuItem
             // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(669, 96);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(41, 13);
-            this.label30.TabIndex = 69;
-            this.label30.Text = "Gertest";
+            this.archivingTasksToolStripMenuItem.Name = "archivingTasksToolStripMenuItem";
+            this.archivingTasksToolStripMenuItem.Size = new System.Drawing.Size(102, 20);
+            this.archivingTasksToolStripMenuItem.Text = "Archiving Tasks";
+            // 
+            // aboutTheToolToolStripMenuItem
+            // 
+            this.aboutTheToolToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aboutTheToolToolStripMenuItem1,
+            this.helpToolStripMenuItem});
+            this.aboutTheToolToolStripMenuItem.Name = "aboutTheToolToolStripMenuItem";
+            this.aboutTheToolToolStripMenuItem.Size = new System.Drawing.Size(96, 20);
+            this.aboutTheToolToolStripMenuItem.Text = "About the tool";
+            // 
+            // aboutTheToolToolStripMenuItem1
+            // 
+            this.aboutTheToolToolStripMenuItem1.Name = "aboutTheToolToolStripMenuItem1";
+            this.aboutTheToolToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.aboutTheToolToolStripMenuItem1.Text = "About the tool";
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.helpToolStripMenuItem.Text = "Help";
             // 
             // Form_MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(726, 637);
-            this.Controls.Add(this.label30);
             this.Controls.Add(this.label29);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.tabControl1);
@@ -1218,6 +1242,8 @@
             this.Name = "Form_MainForm";
             this.Text = "Safeway Manila - Workbrain Archiving Tool";
             this.Load += new System.EventHandler(this.Form_MainForm_Load);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -1338,6 +1364,9 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.RichTextBox rtLogging;
-        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.ToolStripMenuItem archivingTasksToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutTheToolToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutTheToolToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
     }
 }
