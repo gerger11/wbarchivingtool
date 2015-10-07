@@ -94,6 +94,7 @@
             this.rtUpdateEmpUDF = new System.Windows.Forms.RichTextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.lblQueryStat = new System.Windows.Forms.Label();
             this.rtLogging = new System.Windows.Forms.RichTextBox();
             this.btnCheckBoundary = new System.Windows.Forms.Button();
             this.button29 = new System.Windows.Forms.Button();
@@ -174,13 +175,13 @@
             // aboutTheToolToolStripMenuItem1
             // 
             this.aboutTheToolToolStripMenuItem1.Name = "aboutTheToolToolStripMenuItem1";
-            this.aboutTheToolToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.aboutTheToolToolStripMenuItem1.Size = new System.Drawing.Size(151, 22);
             this.aboutTheToolToolStripMenuItem1.Text = "About the tool";
             // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // startDate_DT
@@ -805,6 +806,7 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.lblQueryStat);
             this.tabPage4.Controls.Add(this.rtLogging);
             this.tabPage4.Controls.Add(this.btnCheckBoundary);
             this.tabPage4.Controls.Add(this.button29);
@@ -851,6 +853,16 @@
             this.tabPage4.Text = "Check WB Database";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // lblQueryStat
+            // 
+            this.lblQueryStat.AutoSize = true;
+            this.lblQueryStat.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQueryStat.Location = new System.Drawing.Point(17, 311);
+            this.lblQueryStat.Name = "lblQueryStat";
+            this.lblQueryStat.Size = new System.Drawing.Size(38, 17);
+            this.lblQueryStat.TabIndex = 69;
+            this.lblQueryStat.Text = "------";
+            // 
             // rtLogging
             // 
             this.rtLogging.Location = new System.Drawing.Point(470, 14);
@@ -868,6 +880,7 @@
             this.btnCheckBoundary.Text = "Q";
             this.btnCheckBoundary.UseVisualStyleBackColor = true;
             this.btnCheckBoundary.Click += new System.EventHandler(this.btnCheckBoundary_Click);
+            this.btnCheckBoundary.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnCheckBoundary_MouseDown);
             // 
             // button29
             // 
@@ -975,6 +988,7 @@
             this.btnQueryPrimOVR.Text = "Q";
             this.btnQueryPrimOVR.UseVisualStyleBackColor = true;
             this.btnQueryPrimOVR.Click += new System.EventHandler(this.btnQueryPrimOVR_Click);
+            this.btnQueryPrimOVR.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnQueryPrimOVR_MouseDown);
             // 
             // btnQueryArchOVR
             // 
@@ -985,6 +999,7 @@
             this.btnQueryArchOVR.Text = "Q";
             this.btnQueryArchOVR.UseVisualStyleBackColor = true;
             this.btnQueryArchOVR.Click += new System.EventHandler(this.btnQueryArchOVR_Click);
+            this.btnQueryArchOVR.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnQueryArchOVR_MouseDown);
             // 
             // tbPrimOVR
             // 
@@ -1009,6 +1024,7 @@
             this.btnQueryPrimWDA.Text = "Q";
             this.btnQueryPrimWDA.UseVisualStyleBackColor = true;
             this.btnQueryPrimWDA.Click += new System.EventHandler(this.btnQueryPrimWDA_Click);
+            this.btnQueryPrimWDA.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnQueryPrimWDA_MouseDown);
             // 
             // btnQueryArchWDA
             // 
@@ -1019,6 +1035,7 @@
             this.btnQueryArchWDA.Text = "Q";
             this.btnQueryArchWDA.UseVisualStyleBackColor = true;
             this.btnQueryArchWDA.Click += new System.EventHandler(this.btnQueryArchWDA_Click);
+            this.btnQueryArchWDA.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnQueryArchWDA_MouseDown);
             // 
             // tbPrimWDA
             // 
@@ -1043,6 +1060,7 @@
             this.btnQueryPrimEBL.Text = "Q";
             this.btnQueryPrimEBL.UseVisualStyleBackColor = true;
             this.btnQueryPrimEBL.Click += new System.EventHandler(this.btnQueryPrimEBL_Click);
+            this.btnQueryPrimEBL.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnQueryPrimEBL_MouseDown);
             // 
             // btnQueryArchEBL
             // 
@@ -1053,6 +1071,7 @@
             this.btnQueryArchEBL.Text = "Q";
             this.btnQueryArchEBL.UseVisualStyleBackColor = true;
             this.btnQueryArchEBL.Click += new System.EventHandler(this.btnQueryArchEBL_Click);
+            this.btnQueryArchEBL.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnQueryArchEBL_MouseDown);
             // 
             // tbPrimEBL
             // 
@@ -1077,6 +1096,7 @@
             this.btnQueryPrimCTP.Text = "Q";
             this.btnQueryPrimCTP.UseVisualStyleBackColor = true;
             this.btnQueryPrimCTP.Click += new System.EventHandler(this.btnQueryPrimCTP_Click);
+            this.btnQueryPrimCTP.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnQueryPrimCTP_MouseDown);
             // 
             // btnQueryArchCTP
             // 
@@ -1087,6 +1107,7 @@
             this.btnQueryArchCTP.Text = "Q";
             this.btnQueryArchCTP.UseVisualStyleBackColor = true;
             this.btnQueryArchCTP.Click += new System.EventHandler(this.btnQueryArchCTP_Click);
+            this.btnQueryArchCTP.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnQueryArchCTP_MouseDown);
             // 
             // tbPrimCTP
             // 
@@ -1111,6 +1132,7 @@
             this.btnQueryPrimWD.Text = "Q";
             this.btnQueryPrimWD.UseVisualStyleBackColor = true;
             this.btnQueryPrimWD.Click += new System.EventHandler(this.btnQueryPrimWD_Click);
+            this.btnQueryPrimWD.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnQueryPrimWD_MouseDown);
             // 
             // btnQueryArchWD
             // 
@@ -1121,6 +1143,7 @@
             this.btnQueryArchWD.Text = "Q";
             this.btnQueryArchWD.UseVisualStyleBackColor = true;
             this.btnQueryArchWD.Click += new System.EventHandler(this.btnQueryArchWD_Click);
+            this.btnQueryArchWD.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnQueryArchWD_MouseDown);
             // 
             // tbPrimWD
             // 
@@ -1145,6 +1168,7 @@
             this.btnQueryPrimWS.Text = "Q";
             this.btnQueryPrimWS.UseVisualStyleBackColor = true;
             this.btnQueryPrimWS.Click += new System.EventHandler(this.btnQueryPrimWS_Click);
+            this.btnQueryPrimWS.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnQueryPrimWS_MouseDown);
             // 
             // btnQueryArchWS
             // 
@@ -1155,6 +1179,7 @@
             this.btnQueryArchWS.Text = "Q";
             this.btnQueryArchWS.UseVisualStyleBackColor = true;
             this.btnQueryArchWS.Click += new System.EventHandler(this.btnQueryArchWS_Click);
+            this.btnQueryArchWS.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnQueryArchWS_MouseDown);
             // 
             // tbPrimWS
             // 
@@ -1368,5 +1393,6 @@
         private System.Windows.Forms.ToolStripMenuItem aboutTheToolToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutTheToolToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.Label lblQueryStat;
     }
 }

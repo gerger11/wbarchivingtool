@@ -197,7 +197,7 @@ namespace WorkbrainArchivingTool
         {
             strEmpUDFEfDate = endDate_DT.Value.AddDays(1).ToString("yyyy-MM-dd");
             strEmpUDFVal = endDate_DT.Value.AddDays(1).ToString("MM/dd/yyyy");
-            strEmpUDF = "UPDATE ta00wb.EMP_UDF_DATA @SET EUDFD_EFF_DATE = '" + strEmpUDFEfDate + " 00:00:00.0',@EUDFD_VALUE = '" + strEmpUDFVal + "'@WHERE EMPUDF_ID = (SELECT EMPUDF_ID@FROM ta00wb.EMP_UDF_DEF@WHERE EMPUDF_NAME = 'LAST_ARCHIVE_PAYROLL_DATA_DATE')@AND EMP_ID in (SELECT DISTINCT(EMP_ID)@FROM ARCHIVE.WORK_SUMMARY@WHERE WRKS_WORK_DATE BETWEEN TIMESTAMP('2013-07-21 00:00:00.0')@AND TIMESTAMP('2013-07-27 23:59:59.0'))";
+            strEmpUDF = "UPDATE ta00wb.EMP_UDF_DATA @SET EUDFD_EFF_DATE = '" + strEmpUDFEfDate + " 00:00:00.0',@EUDFD_VALUE = '" + strEmpUDFVal + "'@WHERE EMPUDF_ID = (SELECT EMPUDF_ID@FROM ta00wb.EMP_UDF_DEF@WHERE EMPUDF_NAME = 'LAST_ARCHIVE_PAYROLL_DATA_DATE')@AND EMP_ID in (SELECT DISTINCT(EMP_ID)@FROM ARCHIVE.WORK_SUMMARY@WHERE WRKS_WORK_DATE BETWEEN TIMESTAMP('" + tbStartDate.Text + " 00:00:00.0')@AND TIMESTAMP('" + tbEndDate.Text + " 23:59:59.0'))";
             strEmpUDF = strEmpUDF.Replace("@", "" + System.Environment.NewLine);
             rtUpdateEmpUDF.Text = strEmpUDF;
         }
@@ -646,58 +646,144 @@ namespace WorkbrainArchivingTool
         private void btnCheckBoundary_Click(object sender, EventArgs e)
         {
             queryBoundaryDate();
+            lblQueryDoneExecuting();            
         }
         private void btnQueryArchWS_Click(object sender, EventArgs e)
         {
             queryArchiveWS();
+            lblQueryDoneExecuting();            
         }
         private void btnQueryArchWD_Click(object sender, EventArgs e)
         {
             queryArchiveWD();
+            lblQueryDoneExecuting();            
         }
         private void btnQueryArchCTP_Click(object sender, EventArgs e)
         {
             queryArchiveCTP();
+            lblQueryDoneExecuting();            
         }
         private void btnQueryArchEBL_Click(object sender, EventArgs e)
         {
             queryArchiveEBL();
+            lblQueryDoneExecuting();            
         }
         private void btnQueryArchWDA_Click(object sender, EventArgs e)
         {
             queryArchiveWDA();
+            lblQueryDoneExecuting();
         }
         private void btnQueryArchOVR_Click(object sender, EventArgs e)
         {
             queryArchiveOVR();
+            lblQueryDoneExecuting();            
         }
 
         private void btnQueryPrimWS_Click(object sender, EventArgs e)
         {
             queryPrimaryWS();
+            lblQueryDoneExecuting();            
         }
         private void btnQueryPrimWD_Click(object sender, EventArgs e)
         {
             queryPrimaryWD();
+            lblQueryDoneExecuting();            
         }
         private void btnQueryPrimCTP_Click(object sender, EventArgs e)
         {
             queryPrimaryCTP();
+            lblQueryDoneExecuting();
         }
         private void btnQueryPrimEBL_Click(object sender, EventArgs e)
         {
             queryPrimaryEBL();
+            lblQueryDoneExecuting();
         }
         private void btnQueryPrimWDA_Click(object sender, EventArgs e)
         {
             queryPrimaryWDA();
+            lblQueryDoneExecuting();
         }
         private void btnQueryPrimOVR_Click(object sender, EventArgs e)
         {
             queryPrimaryOVR();
+            lblQueryDoneExecuting();
         }
         
         #endregion
+
+        public void lblQueryExecuting()
+        {
+            lblQueryStat.Text = "QUERY EXECUTING... Please wait...";
+            lblQueryStat.ForeColor = Color.Blue;
+        }
+
+        public void lblQueryDoneExecuting()
+        {
+            lblQueryStat.Text = "QUERY EXECUTION DONE!";
+            lblQueryStat.ForeColor = Color.Green;
+        }
+
+        #region Mouse down events
+        private void btnCheckBoundary_MouseDown(object sender, MouseEventArgs e)
+        {
+            lblQueryExecuting();
+        }
+        private void btnQueryArchWS_MouseDown(object sender, MouseEventArgs e)
+        {
+            lblQueryExecuting();
+        }
+        private void btnQueryArchWD_MouseDown(object sender, MouseEventArgs e)
+        {
+            lblQueryExecuting();
+        }
+        private void btnQueryArchCTP_MouseDown(object sender, MouseEventArgs e)
+        {
+            lblQueryExecuting();
+        }
+        private void btnQueryArchEBL_MouseDown(object sender, MouseEventArgs e)
+        {
+            lblQueryExecuting();
+        }
+        private void btnQueryArchWDA_MouseDown(object sender, MouseEventArgs e)
+        {
+            lblQueryExecuting();
+        }
+        private void btnQueryArchOVR_MouseDown(object sender, MouseEventArgs e)
+        {
+            lblQueryExecuting();
+        }
+        private void btnQueryPrimWS_MouseDown(object sender, MouseEventArgs e)
+        {
+            lblQueryExecuting();
+        }
+        private void btnQueryPrimWD_MouseDown(object sender, MouseEventArgs e)
+        {
+            lblQueryExecuting();
+        }
+        private void btnQueryPrimCTP_MouseDown(object sender, MouseEventArgs e)
+        {
+            lblQueryExecuting();
+        }
+        private void btnQueryPrimEBL_MouseDown(object sender, MouseEventArgs e)
+        {
+            lblQueryExecuting();
+        }
+        private void btnQueryPrimWDA_MouseDown(object sender, MouseEventArgs e)
+        {
+            lblQueryExecuting();
+        }
+        private void btnQueryPrimOVR_MouseDown(object sender, MouseEventArgs e)
+        {
+            lblQueryExecuting();
+        }
+        #endregion Mouse down events
+
+       
+
+       
+
+      
 
         #region SFTP CONNECTION FUNCTIONALITY
 
