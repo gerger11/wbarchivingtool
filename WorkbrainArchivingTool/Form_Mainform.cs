@@ -54,7 +54,6 @@ namespace WorkbrainArchivingTool
             tbStartDate.Enabled = false;
             tbEndDate.Enabled = false;
         }
-
         public void clearDateFields()
         {
             tbStartDate.Clear();
@@ -111,7 +110,39 @@ namespace WorkbrainArchivingTool
         }
         private void btnClear_Click(object sender, EventArgs e)
         {
-            clearDateFields();
+
+        }
+        private void btnClearQueryResults_Click(object sender, EventArgs e)
+        {
+            lblQueryStat.Text = "------";
+            lblQueryStat.ForeColor = Color.Black;
+            clearWBQueriesFields();
+        }
+        public void lblQueryExecuting()
+        {
+            lblQueryStat.Text = "QUERY EXECUTING... Please wait...";
+            lblQueryStat.ForeColor = Color.Blue;
+        }
+        public void lblQueryDoneExecuting()
+        {
+            lblQueryStat.Text = "QUERY EXECUTION DONE!";
+            lblQueryStat.ForeColor = Color.Green;
+        }
+        public void clearWBQueriesFields()
+        {
+            tbBoundaryDate.Clear();
+            tbArchWS.Clear();
+            tbArchWD.Clear();
+            tbArchCTP.Clear();
+            tbArchEBL.Clear();
+            tbArchWDA.Clear();
+            tbArchOVR.Clear();
+            tbPrimWS.Clear();
+            tbPrimWD.Clear();
+            tbPrimCTP.Clear();
+            tbPrimEBL.Clear();
+            tbPrimWDA.Clear();
+            tbPrimOVR.Clear();
         }
 
         #endregion FORM FUNCTIONALITIES
@@ -208,7 +239,6 @@ namespace WorkbrainArchivingTool
             wbRegQuery = wbRegQuery.Replace("@", "" + System.Environment.NewLine);
             rtUpdateRegistry.Text = wbRegQuery;
         }
-
         public void checkBoundaryDate()
         {
             strArchiveBoundary = "SELECT WBREG_VALUE FROM TA00WB.WORKBRAIN_REGISTRY@WHERE WBREG_NAME = 'ARCHIVE_BOUNDARY_DATE'@WITH UR@";
@@ -678,7 +708,6 @@ namespace WorkbrainArchivingTool
             queryArchiveOVR();
             lblQueryDoneExecuting();            
         }
-
         private void btnQueryPrimWS_Click(object sender, EventArgs e)
         {
             queryPrimaryWS();
@@ -709,22 +738,9 @@ namespace WorkbrainArchivingTool
             queryPrimaryOVR();
             lblQueryDoneExecuting();
         }
-        
         #endregion
-
-        public void lblQueryExecuting()
-        {
-            lblQueryStat.Text = "QUERY EXECUTING... Please wait...";
-            lblQueryStat.ForeColor = Color.Blue;
-        }
-
-        public void lblQueryDoneExecuting()
-        {
-            lblQueryStat.Text = "QUERY EXECUTION DONE!";
-            lblQueryStat.ForeColor = Color.Green;
-        }
-
-        #region Mouse down events
+        
+        #region MOUSE DOWN EVENTS
         private void btnCheckBoundary_MouseDown(object sender, MouseEventArgs e)
         {
             lblQueryExecuting();
@@ -777,13 +793,13 @@ namespace WorkbrainArchivingTool
         {
             lblQueryExecuting();
         }
-        #endregion Mouse down events
+        #endregion MOUSE DOWN EVENTS
 
-       
+        
 
-       
+        
 
-      
+
 
         #region SFTP CONNECTION FUNCTIONALITY
 

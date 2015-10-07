@@ -97,7 +97,7 @@
             this.lblQueryStat = new System.Windows.Forms.Label();
             this.rtLogging = new System.Windows.Forms.RichTextBox();
             this.btnCheckBoundary = new System.Windows.Forms.Button();
-            this.button29 = new System.Windows.Forms.Button();
+            this.btnClearQueryResults = new System.Windows.Forms.Button();
             this.btnRunAllQueries = new System.Windows.Forms.Button();
             this.tbBoundaryDate = new System.Windows.Forms.TextBox();
             this.label28 = new System.Windows.Forms.Label();
@@ -809,7 +809,7 @@
             this.tabPage4.Controls.Add(this.lblQueryStat);
             this.tabPage4.Controls.Add(this.rtLogging);
             this.tabPage4.Controls.Add(this.btnCheckBoundary);
-            this.tabPage4.Controls.Add(this.button29);
+            this.tabPage4.Controls.Add(this.btnClearQueryResults);
             this.tabPage4.Controls.Add(this.btnRunAllQueries);
             this.tabPage4.Controls.Add(this.tbBoundaryDate);
             this.tabPage4.Controls.Add(this.label28);
@@ -882,15 +882,16 @@
             this.btnCheckBoundary.Click += new System.EventHandler(this.btnCheckBoundary_Click);
             this.btnCheckBoundary.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnCheckBoundary_MouseDown);
             // 
-            // button29
+            // btnClearQueryResults
             // 
-            this.button29.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button29.Location = new System.Drawing.Point(321, 260);
-            this.button29.Name = "button29";
-            this.button29.Size = new System.Drawing.Size(137, 30);
-            this.button29.TabIndex = 66;
-            this.button29.Text = "Clear Results";
-            this.button29.UseVisualStyleBackColor = true;
+            this.btnClearQueryResults.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClearQueryResults.Location = new System.Drawing.Point(321, 260);
+            this.btnClearQueryResults.Name = "btnClearQueryResults";
+            this.btnClearQueryResults.Size = new System.Drawing.Size(137, 30);
+            this.btnClearQueryResults.TabIndex = 66;
+            this.btnClearQueryResults.Text = "Clear Results";
+            this.btnClearQueryResults.UseVisualStyleBackColor = true;
+            this.btnClearQueryResults.Click += new System.EventHandler(this.btnClearQueryResults_Click);
             // 
             // btnRunAllQueries
             // 
@@ -1384,7 +1385,7 @@
         private System.Windows.Forms.TextBox tbArchWS;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Button btnCheckBoundary;
-        private System.Windows.Forms.Button button29;
+        private System.Windows.Forms.Button btnClearQueryResults;
         private System.Windows.Forms.Button btnRunAllQueries;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label29;
