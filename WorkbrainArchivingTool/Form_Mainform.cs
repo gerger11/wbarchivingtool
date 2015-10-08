@@ -282,7 +282,7 @@ namespace WorkbrainArchivingTool
                 cmd.Transaction = trans;
                 cmd.CommandText = "" + rtArchiveWS.Text;
                 tbArchWS.Text = cmd.ExecuteScalar().ToString();
-                string strLog = System.DateTime.Today.ToShortDateString() + " LOG : Ran ARCHIVE.WORK_SUMMARY Query. " + tbArchWS.Text + " rows returned.@";
+                string strLog = System.DateTime.Today.ToShortDateString() + " LOG : Ran ARCHIVE.WORK_SUMMARY Query for " + tbStartDate.Text + " to " + tbEndDate.Text + ". " + tbArchWS.Text + " rows returned.@";
                 strLog = strLog.Replace("@", "" + System.Environment.NewLine);
                 rtLogging.AppendText(strLog);
 
@@ -298,7 +298,7 @@ namespace WorkbrainArchivingTool
             {
                 tbArchWS.Text = " ";
                 MessageBox.Show("An error was encountered during runtime. Please try again.\n\n" + e.GetBaseException().Message, "ARCHIVE.WORK_SUMMARY Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                string strLog = System.DateTime.Today.ToShortDateString() + " LOG : Ran ARCHIVE.WORK_SUMMARY Query. Error occured. No" + tbArchWS.Text + "rows returned.@";
+                string strLog = System.DateTime.Today.ToShortDateString() + " LOG : Ran ARCHIVE.WORK_SUMMARY Query for " + tbStartDate.Text + " to " + tbEndDate.Text + ". "+"Error occured. No" + tbArchWS.Text + "rows returned.@";
                 strLog = strLog.Replace("@", "" + System.Environment.NewLine);
                 rtLogging.AppendText(strLog);
             }//catch
@@ -314,7 +314,7 @@ namespace WorkbrainArchivingTool
                 cmd.Transaction = trans;
                 cmd.CommandText = "" + rtArchiveWD.Text;
                 tbArchWD.Text = cmd.ExecuteScalar().ToString();
-                string strLog = System.DateTime.Today.ToShortDateString() + " LOG : Ran ARCHIVE.WORK_DETAIL Query. " + tbArchWD.Text + " rows returned.@";
+                string strLog = System.DateTime.Today.ToShortDateString() + " LOG : Ran ARCHIVE.WORK_DETAIL Query for " + tbStartDate.Text + " to " + tbEndDate.Text + ". " + tbArchWD.Text + " rows returned.@";
                 strLog = strLog.Replace("@", "" + System.Environment.NewLine);
                 rtLogging.AppendText(strLog);
 
@@ -331,7 +331,7 @@ namespace WorkbrainArchivingTool
             {
                 tbArchWD.Text = " ";
                 MessageBox.Show("An error was encountered during runtime. Please try again.\n\n" + e.GetBaseException().Message, "ARCHIVE.WORK_DETAIL Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                string strLog = System.DateTime.Today.ToShortDateString() + " LOG : Ran ARCHIVE.WORK_DETAIL Query. Error occured. No" + tbArchWD.Text + "rows returned.@";
+                string strLog = System.DateTime.Today.ToShortDateString() + " LOG : Ran ARCHIVE.WORK_DETAIL Query for " + tbStartDate.Text + " to " + tbEndDate.Text + ". "+"Error occured. No" + tbArchWD.Text + "rows returned.@";
                 strLog = strLog.Replace("@", "" + System.Environment.NewLine);
                 rtLogging.AppendText(strLog);
             }//catch
@@ -347,7 +347,7 @@ namespace WorkbrainArchivingTool
                 cmd.Transaction = trans;
                 cmd.CommandText = "" + rtArchiveCTP.Text;
                 tbArchCTP.Text = cmd.ExecuteScalar().ToString();
-                string strLog = System.DateTime.Today.ToShortDateString() + " LOG : Ran ARCHIVE.CLOCK_TRAN_PROCESSED Query. " + tbArchCTP.Text + " rows returned.@";
+                string strLog = System.DateTime.Today.ToShortDateString() + " LOG : Ran ARCHIVE.CLOCK_TRAN_PROCESSED Query for " + tbStartDate.Text + " to " + tbEndDate.Text + ". " + tbArchCTP.Text + " rows returned.@";
                 strLog = strLog.Replace("@", "" + System.Environment.NewLine);
                 rtLogging.AppendText(strLog);
 
@@ -364,7 +364,7 @@ namespace WorkbrainArchivingTool
             {
                 tbArchCTP.Text = " ";
                 MessageBox.Show("An error was encountered during runtime. Please try again.\n\n" + e.GetBaseException().Message, "ARCHIVE.CLOCK_TRAN_PROCESSED Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                string strLog = System.DateTime.Today.ToShortDateString() + " LOG : Ran ARCHIVE.CLOCK_TRAN_PROCESSED Query. Error occured. No" + tbArchCTP.Text + "rows returned.@";
+                string strLog = System.DateTime.Today.ToShortDateString() + " LOG : Ran ARCHIVE.CLOCK_TRAN_PROCESSED Query for " + tbStartDate.Text + " to " + tbEndDate.Text + ". "+"Error occured. No" + tbArchCTP.Text + "rows returned.@";
                 strLog = strLog.Replace("@", "" + System.Environment.NewLine);
                 rtLogging.AppendText(strLog);
             }//catch
@@ -380,7 +380,7 @@ namespace WorkbrainArchivingTool
                 cmd.Transaction = trans;
                 cmd.CommandText = "" + rtArchiveEBL.Text;
                 tbArchEBL.Text = cmd.ExecuteScalar().ToString();
-                string strLog = System.DateTime.Today.ToShortDateString() + " LOG : Ran ARCHIVE.EMPLOYEE_BALANCE_LOG Query. " + tbArchEBL.Text + " rows returned.@";
+                string strLog = System.DateTime.Today.ToShortDateString() + " LOG : Ran ARCHIVE.EMPLOYEE_BALANCE_LOG Query for " + tbStartDate.Text + " to " + tbEndDate.Text + ". " + tbArchEBL.Text + " rows returned.@";
                 strLog = strLog.Replace("@", "" + System.Environment.NewLine);
                 rtLogging.AppendText(strLog);
 
@@ -397,7 +397,7 @@ namespace WorkbrainArchivingTool
             {
                 tbArchEBL.Text = " ";
                 MessageBox.Show("An error was encountered during runtime. Please try again.\n\n" + e.GetBaseException().Message, "ARCHIVE.EMPLOYEE_BALANCE_LOG Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                string strLog = System.DateTime.Today.ToShortDateString() + " LOG : Ran ARCHIVE.EMPLOYEE_BALANCE_LOG Query. Error occured. No" + tbArchEBL.Text + "rows returned.@";
+                string strLog = System.DateTime.Today.ToShortDateString() + " LOG : Ran ARCHIVE.EMPLOYEE_BALANCE_LOG Query for " + tbStartDate.Text + " to " + tbEndDate.Text + ". "+"Error occured. No" + tbArchEBL.Text + "rows returned.@";
                 strLog = strLog.Replace("@", "" + System.Environment.NewLine);
                 rtLogging.AppendText(strLog);
             }//catch
@@ -413,7 +413,7 @@ namespace WorkbrainArchivingTool
                 cmd.Transaction = trans;
                 cmd.CommandText = "" + rtArchiveWDA.Text;
                 tbArchWDA.Text = cmd.ExecuteScalar().ToString();
-                string strLog = System.DateTime.Today.ToShortDateString() + " LOG : Ran ARCHIVE.WORK_DETAIL_ADJUST Query. " + tbArchWDA.Text + " rows returned.@";
+                string strLog = System.DateTime.Today.ToShortDateString() + " LOG : Ran ARCHIVE.WORK_DETAIL_ADJUST Query for " + tbStartDate.Text + " to " + tbEndDate.Text + ". " + tbArchWDA.Text + " rows returned.@";
                 strLog = strLog.Replace("@", "" + System.Environment.NewLine);
                 rtLogging.AppendText(strLog);
 
@@ -430,7 +430,7 @@ namespace WorkbrainArchivingTool
             {
                 tbArchWDA.Text = " ";
                 MessageBox.Show("An error was encountered during runtime. Please try again.\n\n" + e.GetBaseException().Message, "ARCHIVE.WORK_DETAIL_ADJUST Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                string strLog = System.DateTime.Today.ToShortDateString() + " LOG : Ran ARCHIVE.WORK_DETAIL_ADJUST Query. Error occured. No" + tbArchWDA.Text + "rows returned.@";
+                string strLog = System.DateTime.Today.ToShortDateString() + " LOG : Ran ARCHIVE.WORK_DETAIL_ADJUST Query for " + tbStartDate.Text + " to " + tbEndDate.Text + ". "+"Error occured. No" + tbArchWDA.Text + "rows returned.@";
                 strLog = strLog.Replace("@", "" + System.Environment.NewLine);
                 rtLogging.AppendText(strLog);
             }//catch
@@ -446,7 +446,7 @@ namespace WorkbrainArchivingTool
                 cmd.Transaction = trans;
                 cmd.CommandText = "" + rtArchiveOVR.Text;
                 tbArchOVR.Text = cmd.ExecuteScalar().ToString();
-                string strLog = System.DateTime.Today.ToShortDateString() + " LOG : Ran ARCHIVE.OVERRIDE Query. " + tbArchOVR.Text + " rows returned.@";
+                string strLog = System.DateTime.Today.ToShortDateString() + " LOG : Ran ARCHIVE.OVERRIDE Query for " + tbStartDate.Text + " to " + tbEndDate.Text + ". " + tbArchOVR.Text + " rows returned.@";
                 strLog = strLog.Replace("@", "" + System.Environment.NewLine);
                 rtLogging.AppendText(strLog);
 
@@ -481,7 +481,7 @@ namespace WorkbrainArchivingTool
                 cmd.Transaction = trans;
                 cmd.CommandText = "" + rtPrimaryWS.Text;
                 tbPrimWS.Text = cmd.ExecuteScalar().ToString();
-                string strLog = System.DateTime.Today.ToShortDateString() + " LOG : Ran TA00WB.WORK_SUMMARY Query. " + tbPrimWS.Text + " rows returned.@";
+                string strLog = System.DateTime.Today.ToShortDateString() + " LOG : Ran TA00WB.WORK_SUMMARY Query for " + tbStartDate.Text + " to " + tbEndDate.Text + ". " + tbPrimWS.Text + " rows returned.@";
                 strLog = strLog.Replace("@", "" + System.Environment.NewLine);
                 rtLogging.AppendText(strLog);
 
@@ -497,7 +497,7 @@ namespace WorkbrainArchivingTool
             {
                 tbPrimWS.Text = " ";
                 MessageBox.Show("An error was encountered during runtime. Please try again.\n\n" + e.GetBaseException().Message, "TA00WB.WORK_SUMMARY Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                string strArchWSLog = System.DateTime.Today.ToShortDateString() + " LOG : Ran TA00WB.WORK_SUMMARY Query. Error occured. No" + tbPrimWS.Text + "rows returned.@";
+                string strArchWSLog = System.DateTime.Today.ToShortDateString() + " LOG : Ran TA00WB.WORK_SUMMARY Query for " + tbStartDate.Text + " to " + tbEndDate.Text + ". "+"Error occured. No" + tbPrimWS.Text + "rows returned.@";
                 strArchWSLog = strArchWSLog.Replace("@", "" + System.Environment.NewLine);
                 rtLogging.AppendText(strArchWSLog);
             }//catch
@@ -513,7 +513,7 @@ namespace WorkbrainArchivingTool
                 cmd.Transaction = trans;
                 cmd.CommandText = "" + rtPrimaryWD.Text;
                 tbPrimWD.Text = cmd.ExecuteScalar().ToString();
-                string strLog = System.DateTime.Today.ToShortDateString() + " LOG : Ran TA00WB.WORK_DETAIL Query. " + tbPrimWD.Text + " rows returned.@";
+                string strLog = System.DateTime.Today.ToShortDateString() + " LOG : Ran TA00WB.WORK_DETAIL Query for " + tbStartDate.Text + " to " + tbEndDate.Text + ". " + tbPrimWD.Text + " rows returned.@";
                 strLog = strLog.Replace("@", "" + System.Environment.NewLine);
                 rtLogging.AppendText(strLog);
 
@@ -530,7 +530,7 @@ namespace WorkbrainArchivingTool
             {
                 tbPrimWS.Text = " ";
                 MessageBox.Show("An error was encountered during runtime. Please try again.\n\n" + e.GetBaseException().Message, "TA00WB.WORK_DETAIL Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                string strLog = System.DateTime.Today.ToShortDateString() + " LOG : Ran ARCHIVE.WORK_DETAIL Query. Error occured. No" + tbPrimWS.Text + "rows returned.@";
+                string strLog = System.DateTime.Today.ToShortDateString() + " LOG : Ran ARCHIVE.WORK_DETAIL Query for " + tbStartDate.Text + " to " + tbEndDate.Text + ". "+"Error occured. No" + tbPrimWS.Text + "rows returned.@";
                 strLog = strLog.Replace("@", "" + System.Environment.NewLine);
                 rtLogging.AppendText(strLog);
             }//catch
@@ -546,7 +546,7 @@ namespace WorkbrainArchivingTool
                 cmd.Transaction = trans;
                 cmd.CommandText = "" + rtPrimaryCTP.Text;
                 tbPrimCTP.Text = cmd.ExecuteScalar().ToString();
-                string strLog = System.DateTime.Today.ToShortDateString() + " LOG : Ran TA00WB.CLOCK_TRAN_PROCESSED Query. " + tbPrimCTP.Text + " rows returned.@";
+                string strLog = System.DateTime.Today.ToShortDateString() + " LOG : Ran TA00WB.CLOCK_TRAN_PROCESSED Query for " + tbStartDate.Text + " to " + tbEndDate.Text + ". " + tbPrimCTP.Text + " rows returned.@";
                 strLog = strLog.Replace("@", "" + System.Environment.NewLine);
                 rtLogging.AppendText(strLog);
 
@@ -563,7 +563,7 @@ namespace WorkbrainArchivingTool
             {
                 tbPrimCTP.Text = " ";
                 MessageBox.Show("An error was encountered during runtime. Please try again.\n\n" + e.GetBaseException().Message, "TA00WB.CLOCK_TRAN_PROCESSED Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                string strLog = System.DateTime.Today.ToShortDateString() + " LOG : Ran TA00WB.CLOCK_TRAN_PROCESSED Query. Error occured. No" + tbPrimCTP.Text + "rows returned.@";
+                string strLog = System.DateTime.Today.ToShortDateString() + " LOG : Ran TA00WB.CLOCK_TRAN_PROCESSED Query for " + tbStartDate.Text + " to " + tbEndDate.Text + ". "+"Error occured. No" + tbPrimCTP.Text + "rows returned.@";
                 strLog = strLog.Replace("@", "" + System.Environment.NewLine);
                 rtLogging.AppendText(strLog);
             }//catch
@@ -579,7 +579,7 @@ namespace WorkbrainArchivingTool
                 cmd.Transaction = trans;
                 cmd.CommandText = "" + rtPrimaryEBL.Text;
                 tbPrimEBL.Text = cmd.ExecuteScalar().ToString();
-                string strLog = System.DateTime.Today.ToShortDateString() + " LOG : Ran TA00WB.EMPLOYEE_BALANCE_LOG Query. " + tbPrimEBL.Text + " rows returned.@";
+                string strLog = System.DateTime.Today.ToShortDateString() + " LOG : Ran TA00WB.EMPLOYEE_BALANCE_LOG Query for " + tbStartDate.Text + " to " + tbEndDate.Text + ". " + tbPrimEBL.Text + " rows returned.@";
                 strLog = strLog.Replace("@", "" + System.Environment.NewLine);
                 rtLogging.AppendText(strLog);
 
@@ -596,7 +596,7 @@ namespace WorkbrainArchivingTool
             {
                 tbPrimEBL.Text = " ";
                 MessageBox.Show("An error was encountered during runtime. Please try again.\n\n" + e.GetBaseException().Message, "ARCHIVE.EMPLOYEE_BALANCE_LOG Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                string strLog = System.DateTime.Today.ToShortDateString() + " LOG : Ran ARCHIVE.EMPLOYEE_BALANCE_LOG Query. Error occured. No" + tbPrimEBL.Text + "rows returned.@";
+                string strLog = System.DateTime.Today.ToShortDateString() + " LOG : Ran ARCHIVE.EMPLOYEE_BALANCE_LOG Query for " + tbStartDate.Text + " to " + tbEndDate.Text + ". "+"Error occured. No" + tbPrimEBL.Text + "rows returned.@";
                 strLog = strLog.Replace("@", "" + System.Environment.NewLine);
                 rtLogging.AppendText(strLog);
             }//catch
@@ -794,12 +794,6 @@ namespace WorkbrainArchivingTool
             lblQueryExecuting();
         }
         #endregion MOUSE DOWN EVENTS
-
-        
-
-        
-
-
 
         #region SFTP CONNECTION FUNCTIONALITY
 
