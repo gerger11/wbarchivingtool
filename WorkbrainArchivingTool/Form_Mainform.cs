@@ -612,7 +612,7 @@ namespace WorkbrainArchivingTool
                 cmd.Transaction = trans;
                 cmd.CommandText = "" + rtPrimaryWDA.Text;
                 tbPrimWDA.Text = cmd.ExecuteScalar().ToString();
-                string strLog = System.DateTime.Today.ToShortDateString() + " LOG : Ran TA00WB.WORK_DETAIL_ADJUST Query. " + tbPrimWDA.Text + " rows returned.@";
+                string strLog = System.DateTime.Today.ToShortDateString() + " LOG : Ran TA00WB.WORK_DETAIL_ADJUST Query for " + tbStartDate.Text + " to " + tbEndDate.Text + ". " + " rows returned.@";
                 strLog = strLog.Replace("@", "" + System.Environment.NewLine);
                 rtLogging.AppendText(strLog);
 
@@ -629,7 +629,7 @@ namespace WorkbrainArchivingTool
             {
                 tbArchWS.Text = " ";
                 MessageBox.Show("An error was encountered during runtime. Please try again.\n\n" + e.GetBaseException().Message, "TA00WB.WORK_DETAIL_ADJUST Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                string strLog = System.DateTime.Today.ToShortDateString() + " LOG : Ran TA00WB.WORK_DETAIL_ADJUST Query. Error occured. No" + tbPrimWDA.Text + "rows returned.@";
+                string strLog = System.DateTime.Today.ToShortDateString() + " LOG : Ran TA00WB.WORK_DETAIL_ADJUST Query for " + tbStartDate.Text + " to " + tbEndDate.Text + ". " +"Error occured. No" + tbPrimWDA.Text + "rows returned.@";
                 strLog = strLog.Replace("@", "" + System.Environment.NewLine);
                 rtLogging.AppendText(strLog);
             }//catch
@@ -645,7 +645,7 @@ namespace WorkbrainArchivingTool
                 cmd.Transaction = trans;
                 cmd.CommandText = "" + rtPrimaryOVR.Text;
                 tbPrimOVR.Text = cmd.ExecuteScalar().ToString();
-                string strLog = System.DateTime.Today.ToShortDateString() + " LOG : Ran TA00WB.OVERRIDE Query. " + tbPrimOVR.Text + " rows returned.@";
+                string strLog = System.DateTime.Today.ToShortDateString() + " LOG : Ran TA00WB.OVERRIDE Query for " + tbStartDate.Text + " to " + tbEndDate.Text + ". " + tbPrimOVR.Text + " rows returned.@";
                 strLog = strLog.Replace("@", "" + System.Environment.NewLine);
                 rtLogging.AppendText(strLog);
 
@@ -662,7 +662,7 @@ namespace WorkbrainArchivingTool
             {
                 tbArchWS.Text = " ";
                 MessageBox.Show("An error was encountered during runtime. Please try again.\n\n" + e.GetBaseException().Message, "TA00WB.OVERRIDE Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                string strLog = System.DateTime.Today.ToShortDateString() + " LOG : Ran ARCHIVE.OVERRIDE Query. Error occured. No" + tbPrimOVR.Text + "rows returned.@";
+                string strLog = System.DateTime.Today.ToShortDateString() + " LOG : Ran ARCHIVE.OVERRIDE Query for " + tbStartDate.Text + " to " + tbEndDate.Text + ". " +  "Error occured. No" + tbPrimOVR.Text + "rows returned.@";
                 strLog = strLog.Replace("@", "" + System.Environment.NewLine);
                 rtLogging.AppendText(strLog);
             }//catch
