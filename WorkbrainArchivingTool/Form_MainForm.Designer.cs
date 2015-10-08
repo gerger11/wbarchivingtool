@@ -136,6 +136,12 @@
             this.label29 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.rtSelectEmpUDF = new System.Windows.Forms.RichTextBox();
+            this.button16 = new System.Windows.Forms.Button();
+            this.btnQueryCountEmpUDF = new System.Windows.Forms.Button();
+            this.tbCountEmpUDF = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -678,6 +684,9 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.button16);
+            this.tabPage3.Controls.Add(this.rtSelectEmpUDF);
+            this.tabPage3.Controls.Add(this.label30);
             this.tabPage3.Controls.Add(this.label19);
             this.tabPage3.Controls.Add(this.label18);
             this.tabPage3.Controls.Add(this.button13);
@@ -759,7 +768,7 @@
             // button15
             // 
             this.button15.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button15.Location = new System.Drawing.Point(220, 355);
+            this.button15.Location = new System.Drawing.Point(220, 169);
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(119, 21);
             this.button15.TabIndex = 34;
@@ -790,7 +799,7 @@
             this.rtUpdateEmpUDF.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtUpdateEmpUDF.Location = new System.Drawing.Point(8, 22);
             this.rtUpdateEmpUDF.Name = "rtUpdateEmpUDF";
-            this.rtUpdateEmpUDF.Size = new System.Drawing.Size(331, 327);
+            this.rtUpdateEmpUDF.Size = new System.Drawing.Size(331, 141);
             this.rtUpdateEmpUDF.TabIndex = 31;
             this.rtUpdateEmpUDF.Text = "";
             // 
@@ -806,6 +815,9 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.btnQueryCountEmpUDF);
+            this.tabPage4.Controls.Add(this.tbCountEmpUDF);
+            this.tabPage4.Controls.Add(this.label31);
             this.tabPage4.Controls.Add(this.lblQueryStat);
             this.tabPage4.Controls.Add(this.rtLogging);
             this.tabPage4.Controls.Add(this.btnCheckBoundary);
@@ -857,7 +869,7 @@
             // 
             this.lblQueryStat.AutoSize = true;
             this.lblQueryStat.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQueryStat.Location = new System.Drawing.Point(17, 311);
+            this.lblQueryStat.Location = new System.Drawing.Point(17, 360);
             this.lblQueryStat.Name = "lblQueryStat";
             this.lblQueryStat.Size = new System.Drawing.Size(38, 17);
             this.lblQueryStat.TabIndex = 69;
@@ -1245,6 +1257,63 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(6, 193);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(141, 13);
+            this.label30.TabIndex = 40;
+            this.label30.Text = "Select Employee UDF Data";
+            // 
+            // rtSelectEmpUDF
+            // 
+            this.rtSelectEmpUDF.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtSelectEmpUDF.Location = new System.Drawing.Point(8, 209);
+            this.rtSelectEmpUDF.Name = "rtSelectEmpUDF";
+            this.rtSelectEmpUDF.Size = new System.Drawing.Size(331, 93);
+            this.rtSelectEmpUDF.TabIndex = 41;
+            this.rtSelectEmpUDF.Text = "";
+            // 
+            // button16
+            // 
+            this.button16.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button16.Location = new System.Drawing.Point(220, 308);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(119, 21);
+            this.button16.TabIndex = 42;
+            this.button16.Text = "Copy to Clipboard";
+            this.button16.UseVisualStyleBackColor = true;
+            // 
+            // btnQueryCountEmpUDF
+            // 
+            this.btnQueryCountEmpUDF.Location = new System.Drawing.Point(283, 314);
+            this.btnQueryCountEmpUDF.Name = "btnQueryCountEmpUDF";
+            this.btnQueryCountEmpUDF.Size = new System.Drawing.Size(20, 26);
+            this.btnQueryCountEmpUDF.TabIndex = 72;
+            this.btnQueryCountEmpUDF.Text = "Q";
+            this.btnQueryCountEmpUDF.UseVisualStyleBackColor = true;
+            this.btnQueryCountEmpUDF.Click += new System.EventHandler(this.btnQueryCountEmpUDF_Click);
+            this.btnQueryCountEmpUDF.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnQueryCountEmpUDF_MouseDown);
+            // 
+            // tbCountEmpUDF
+            // 
+            this.tbCountEmpUDF.Location = new System.Drawing.Point(166, 315);
+            this.tbCountEmpUDF.Name = "tbCountEmpUDF";
+            this.tbCountEmpUDF.Size = new System.Drawing.Size(115, 25);
+            this.tbCountEmpUDF.TabIndex = 71;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.Location = new System.Drawing.Point(12, 318);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(151, 17);
+            this.label31.TabIndex = 70;
+            this.label31.Text = "Count Emp UDF Record";
+            // 
             // Form_MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1395,5 +1464,11 @@
         private System.Windows.Forms.ToolStripMenuItem aboutTheToolToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.Label lblQueryStat;
+        private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.RichTextBox rtSelectEmpUDF;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Button btnQueryCountEmpUDF;
+        private System.Windows.Forms.TextBox tbCountEmpUDF;
+        private System.Windows.Forms.Label label31;
     }
 }

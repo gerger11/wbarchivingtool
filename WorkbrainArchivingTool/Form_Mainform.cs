@@ -106,6 +106,7 @@ namespace WorkbrainArchivingTool
                 updateUDF();
                 updateWorkbrainRegistry();
                 checkBoundaryDate();
+                selectEmpUDF();
             }//else
         }
         private void btnClear_Click(object sender, EventArgs e)
@@ -244,6 +245,13 @@ namespace WorkbrainArchivingTool
             strArchiveBoundary = "SELECT WBREG_VALUE FROM TA00WB.WORKBRAIN_REGISTRY@WHERE WBREG_NAME = 'ARCHIVE_BOUNDARY_DATE'@WITH UR@";
             strArchiveBoundary = strArchiveBoundary.Replace("@", "" + System.Environment.NewLine);
             rtCheckBoundary.Text = strArchiveBoundary;
+        }
+
+        public void selectEmpUDF()
+        {
+            strEmpUDF = "SELECT COUNT(*) FROM ta00wb.EMP_UDF_DATA @WHERE EMPUDF_ID = (SELECT EMPUDF_ID@FROM ta00wb.EMP_UDF_DEF@WHERE EMPUDF_NAME = 'LAST_ARCHIVE_PAYROLL_DATA_DATE')@AND EMP_ID in (SELECT DISTINCT(EMP_ID)@FROM ARCHIVE.WORK_SUMMARY@WHERE WRKS_WORK_DATE BETWEEN TIMESTAMP('" + tbStartDate.Text + " 00:00:00.0')@AND TIMESTAMP('" + tbEndDate.Text + " 23:59:59.0'))";
+            strEmpUDF = strEmpUDF.Replace("@", "" + System.Environment.NewLine);
+            rtSelectEmpUDF.Text = strEmpUDF;
         }
         
         #endregion FORM CONTENTS
@@ -667,9 +675,40 @@ namespace WorkbrainArchivingTool
                 rtLogging.AppendText(strLog);
             }//catch
         }
+        //in progress gigne00 20151008
+        public void querySelectEmpUDFCount()
+        {
+            DB2Connection conndb2 = new DB2Connection(globalConnStringDb2);
+            try
+            {
+                conndb2.Open();
+                DB2Command cmd = conndb2.CreateCommand();
+                DB2Transaction trans = conndb2.BeginTransaction();
+                cmd.Transaction = trans;
+                cmd.CommandText = "" + rtSelectEmpUDF.Text;
+                tbCountEmpUDF.Text = cmd.ExecuteScalar().ToString();
+                string strLog = System.DateTime.Today.ToShortDateString() + " LOG : Ran COUNT_EMPUDF Query for " + tbStartDate.Text + " to " + tbEndDate.Text + ". " + tbCountEmpUDF.Text + " rows returned.@";
+                strLog = strLog.Replace("@", "" + System.Environment.NewLine);
+                rtLogging.AppendText(strLog);
 
+                //logger
 
-
+                string logFilePath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                using (TextWriter outputFile = new StreamWriter(logFilePath + @"\WBArchiving.txt", true))
+                {
+                    outputFile.Write(strLog);
+                }
+                conndb2.Close();
+            }
+            catch (Exception e)
+            {
+                tbArchWS.Text = " ";
+                MessageBox.Show("An error was encountered during runtime. Please try again.\n\n" + e.GetBaseException().Message, "TA00WB.OVERRIDE Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                string strLog = System.DateTime.Today.ToShortDateString() + " LOG : Ran ARCHIVE.OVERRIDE Query for " + tbStartDate.Text + " to " + tbEndDate.Text + ". " + "Error occured. No" + tbPrimOVR.Text + "rows returned.@";
+                strLog = strLog.Replace("@", "" + System.Environment.NewLine);
+                rtLogging.AppendText(strLog);
+            }//catch
+        }
         #endregion WORKBRAIN DATABASE CONNECTION
 
         #region INDIVIDUAL BUTTON CLICK (WORKBRAIN DB QUERIES)
@@ -738,6 +777,11 @@ namespace WorkbrainArchivingTool
             queryPrimaryOVR();
             lblQueryDoneExecuting();
         }
+        private void btnQueryCountEmpUDF_Click(object sender, EventArgs e)
+        {
+            querySelectEmpUDFCount();
+            lblQueryDoneExecuting();
+        }
         #endregion
         
         #region MOUSE DOWN EVENTS
@@ -790,6 +834,10 @@ namespace WorkbrainArchivingTool
             lblQueryExecuting();
         }
         private void btnQueryPrimOVR_MouseDown(object sender, MouseEventArgs e)
+        {
+            lblQueryExecuting();
+        }
+        private void btnQueryCountEmpUDF_MouseDown(object sender, MouseEventArgs e)
         {
             lblQueryExecuting();
         }
