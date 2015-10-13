@@ -152,6 +152,71 @@ namespace WorkbrainArchivingTool
 
         #endregion FORM FUNCTIONALITIES
 
+        #region BUFFER CHECKERS
+
+        public void lblPrimQueryWS()
+        {
+            lblDeleted.Text = "Query executing for Work Summary table...";
+            lblDeleted.ForeColor = Color.Blue;
+        }
+        public void lblPrimQueryWD()
+        {
+            lblDeleted.Text = "Query executing for Work Detail table...";
+            lblDeleted.ForeColor = Color.Blue;
+        }
+        public void lblPrimQueryCTP()
+        {
+            lblDeleted.Text = "Query executing for Clock Tran Processed table...";
+            lblDeleted.ForeColor = Color.Blue;
+        }
+        public void lblPrimQueryEBL()
+        {
+            lblDeleted.Text = "Query executing for Emp Balance Log table...";
+            lblDeleted.ForeColor = Color.Blue;
+        }
+        public void lblPrimQueryWDA()
+        {
+            lblDeleted.Text = "Query executing for Work Detail Adjust table...";
+            lblDeleted.ForeColor = Color.Blue;
+        }
+        public void lblPrimQueryOVR()
+        {
+            lblDeleted.Text = "Query executing for Override table...";
+            lblDeleted.ForeColor = Color.Blue;
+        }
+
+        public void lblQueryWS()
+        {
+            lblArchived.Text = "Query executing for Work Summary table...";
+            lblArchived.ForeColor = Color.Blue;
+        }
+        public void lblQueryWD()
+        {
+            lblArchived.Text = "Query executing for Work Detail table...";
+            lblArchived.ForeColor = Color.Blue;
+        }
+        public void lblQueryCTP()
+        {
+            lblArchived.Text = "Query executing for Clock Tran Processed table...";
+            lblArchived.ForeColor = Color.Blue;
+        }
+        public void lblQueryEBL()
+        {
+            lblArchived.Text = "Query executing for Emp Balance Log table...";
+            lblArchived.ForeColor = Color.Blue;
+        }
+        public void lblQueryWDA()
+        {
+            lblArchived.Text = "Query executing for Work Detail Adjust table...";
+            lblArchived.ForeColor = Color.Blue;
+        }
+        public void lblQueryOVR()
+        {
+            lblArchived.Text = "Query executing for Override table...";
+            lblArchived.ForeColor = Color.Blue;
+        }
+        #endregion BUFFER CHECKERS
+
         #region FORM CONTENTS
         //archive table
         public void archiveQueryWS()
@@ -725,6 +790,8 @@ namespace WorkbrainArchivingTool
         {
             queryArchiveWS();
             lblQueryDoneExecuting();
+            // [gigne00] : 20151013 - Insert this method after lblQueryDoneExecuting();
+            // this monitors if value from the textbox has already been archived/deleted or not
             Int64 iHolder;
             iHolder = Convert.ToInt64(tbArchWS.Text);
             iHolder = Int64.Parse(tbArchWS.Text);
@@ -732,44 +799,125 @@ namespace WorkbrainArchivingTool
             if (iHolder > 0)
             {
                 lblArchived.ForeColor = Color.Green;
-                lblArchived.Text = "Rows are archived!";
+                lblArchived.Text = label22.Text + " Rows are archived!";
             }
             else if (iHolder == 0)
             {
                 lblArchived.ForeColor = Color.Red;
-                lblArchived.Text = "Rows NOT YET archived!";
+                lblArchived.Text = label22.Text + " Rows NOT YET archived!";
             }
         }
         private void btnQueryArchWD_Click(object sender, EventArgs e)
         {
             queryArchiveWD();
-            lblQueryDoneExecuting();            
+            lblQueryDoneExecuting();
+            // [gigne00] : 20151013 - Insert this method after lblQueryDoneExecuting();
+            // this monitors if value from the textbox has already been archived/deleted or not
+            Int64 iHolder;
+            iHolder = Convert.ToInt64(tbArchWD.Text);
+            iHolder = Int64.Parse(tbArchWD.Text);
+
+            if (iHolder > 0)
+            {
+                lblArchived.ForeColor = Color.Green;
+                lblArchived.Text = label23.Text + " Rows are archived!";
+            }
+            else if (iHolder == 0)
+            {
+                lblArchived.ForeColor = Color.Red;
+                lblArchived.Text = label23.Text + " Rows NOT YET archived!";
+            }               
         }
         private void btnQueryArchCTP_Click(object sender, EventArgs e)
         {
             queryArchiveCTP();
-            lblQueryDoneExecuting();            
+            lblQueryDoneExecuting();
+            // [gigne00] : 20151013 - Insert this method after lblQueryDoneExecuting();
+            // this monitors if value from the textbox has already been archived/deleted or not
+            Int64 iHolder;
+            iHolder = Convert.ToInt64(tbArchCTP.Text);
+            iHolder = Int64.Parse(tbArchCTP.Text);
+
+            if (iHolder > 0)
+            {
+                lblArchived.ForeColor = Color.Green;
+                lblArchived.Text = label24.Text + " Rows are archived!";
+            }
+            else if (iHolder == 0)
+            {
+                lblArchived.ForeColor = Color.Red;
+                lblArchived.Text = label24.Text + " Rows NOT YET archived!";
+            }
         }
         private void btnQueryArchEBL_Click(object sender, EventArgs e)
         {
             queryArchiveEBL();
-            lblQueryDoneExecuting();            
+            lblQueryDoneExecuting();
+            // [gigne00] : 20151013 - Insert this method after lblQueryDoneExecuting();
+            // this monitors if value from the textbox has already been archived/deleted or not
+            Int64 iHolder;
+            iHolder = Convert.ToInt64(tbArchEBL.Text);
+            iHolder = Int64.Parse(tbArchEBL.Text);
+
+            if (iHolder > 0)
+            {
+                lblArchived.ForeColor = Color.Green;
+                lblArchived.Text = label25.Text + " Rows are archived!";
+            }
+            else if (iHolder == 0)
+            {
+                lblArchived.ForeColor = Color.Red;
+                lblArchived.Text = label25.Text + " Rows NOT YET archived!";
+            }
         }
         private void btnQueryArchWDA_Click(object sender, EventArgs e)
         {
             queryArchiveWDA();
             lblQueryDoneExecuting();
+            // [gigne00] : 20151013 - Insert this method after lblQueryDoneExecuting();
+            // this monitors if value from the textbox has already been archived/deleted or not
+            Int64 iHolder;
+            iHolder = Convert.ToInt64(tbArchWDA.Text);
+            iHolder = Int64.Parse(tbArchWDA.Text);
+
+            if (iHolder > 0)
+            {
+                lblArchived.ForeColor = Color.Green;
+                lblArchived.Text = label26.Text + " Rows are archived!";
+            }
+            else if (iHolder == 0)
+            {
+                lblArchived.ForeColor = Color.Red;
+                lblArchived.Text = label26.Text + " Rows NOT YET archived!";
+            }
         }
         private void btnQueryArchOVR_Click(object sender, EventArgs e)
         {
             queryArchiveOVR();
-            lblQueryDoneExecuting();            
+            lblQueryDoneExecuting();
+            // [gigne00] : 20151013 - Insert this method after lblQueryDoneExecuting();
+            // this monitors if value from the textbox has already been archived/deleted or not
+            Int64 iHolder;
+            iHolder = Convert.ToInt64(tbArchOVR.Text);
+            iHolder = Int64.Parse(tbArchOVR.Text);
+
+            if (iHolder > 0)
+            {
+                lblArchived.ForeColor = Color.Green;
+                lblArchived.Text = label27.Text + " Rows are archived!";
+            }
+            else if (iHolder == 0)
+            {
+                lblArchived.ForeColor = Color.Red;
+                lblArchived.Text = label27.Text + " Rows NOT YET archived!";
+            }
         }
         private void btnQueryPrimWS_Click(object sender, EventArgs e)
         {
             queryPrimaryWS();
             lblQueryDoneExecuting();
-
+            // [gigne00] : 20151013 - Insert this method after lblQueryDoneExecuting();
+            // this monitors if value from the textbox has already been archived/deleted or not
             Int64 iHolder;
             iHolder = Convert.ToInt64(tbPrimWS.Text);
             iHolder = Int64.Parse(tbPrimWS.Text);
@@ -777,38 +925,118 @@ namespace WorkbrainArchivingTool
             if (iHolder == 0)
             {
                 lblDeleted.ForeColor = Color.Green;
-                lblDeleted.Text = "Rows are deleted!";
+                lblDeleted.Text = label22.Text + " Rows are deleted!";
             }
             else if (iHolder > 0)
             {
                 lblDeleted.ForeColor = Color.Red;
-                lblDeleted.Text = "Rows NOT YET deleted!";
+                lblDeleted.Text = label22.Text + " Rows NOT YET deleted!";
             }
         }
         private void btnQueryPrimWD_Click(object sender, EventArgs e)
         {
             queryPrimaryWD();
-            lblQueryDoneExecuting();            
+            lblQueryDoneExecuting();
+            // [gigne00] : 20151013 - Insert this method after lblQueryDoneExecuting();
+            // this monitors if value from the textbox has already been archived/deleted or not
+            Int64 iHolder;
+            iHolder = Convert.ToInt64(tbPrimWD.Text);
+            iHolder = Int64.Parse(tbPrimWD.Text);
+
+            if (iHolder == 0)
+            {
+                lblDeleted.ForeColor = Color.Green;
+                lblDeleted.Text = label23.Text + " Rows are deleted!";
+            }
+            else if (iHolder > 0)
+            {
+                lblDeleted.ForeColor = Color.Red;
+                lblDeleted.Text = label23.Text + " Rows NOT YET deleted!";
+            }
         }
         private void btnQueryPrimCTP_Click(object sender, EventArgs e)
         {
             queryPrimaryCTP();
             lblQueryDoneExecuting();
+            // [gigne00] : 20151013 - Insert this method after lblQueryDoneExecuting();
+            // this monitors if value from the textbox has already been archived/deleted or not
+            Int64 iHolder;
+            iHolder = Convert.ToInt64(tbPrimCTP.Text);
+            iHolder = Int64.Parse(tbPrimCTP.Text);
+
+            if (iHolder == 0)
+            {
+                lblDeleted.ForeColor = Color.Green;
+                lblDeleted.Text = label24.Text + " Rows are deleted!";
+            }
+            else if (iHolder > 0)
+            {
+                lblDeleted.ForeColor = Color.Red;
+                lblDeleted.Text = label24.Text + " Rows NOT YET deleted!";
+            }
         }
         private void btnQueryPrimEBL_Click(object sender, EventArgs e)
         {
             queryPrimaryEBL();
             lblQueryDoneExecuting();
+            // [gigne00] : 20151013 - Insert this method after lblQueryDoneExecuting();
+            // this monitors if value from the textbox has already been archived/deleted or not
+            Int64 iHolder;
+            iHolder = Convert.ToInt64(tbPrimEBL.Text);
+            iHolder = Int64.Parse(tbPrimEBL.Text);
+
+            if (iHolder == 0)
+            {
+                lblDeleted.ForeColor = Color.Green;
+                lblDeleted.Text = label25.Text + " Rows are deleted!";
+            }
+            else if (iHolder > 0)
+            {
+                lblDeleted.ForeColor = Color.Red;
+                lblDeleted.Text = label25.Text + " Rows NOT YET deleted!";
+            }
         }
         private void btnQueryPrimWDA_Click(object sender, EventArgs e)
         {
             queryPrimaryWDA();
             lblQueryDoneExecuting();
+            // [gigne00] : 20151013 - Insert this method after lblQueryDoneExecuting();
+            // this monitors if value from the textbox has already been archived/deleted or not
+            Int64 iHolder;
+            iHolder = Convert.ToInt64(tbPrimWDA.Text);
+            iHolder = Int64.Parse(tbPrimWDA.Text);
+
+            if (iHolder == 0)
+            {
+                lblDeleted.ForeColor = Color.Green;
+                lblDeleted.Text = label26.Text + " Rows are deleted!";
+            }
+            else if (iHolder > 0)
+            {
+                lblDeleted.ForeColor = Color.Red;
+                lblDeleted.Text = label26.Text + " Rows NOT YET deleted!";
+            }
         }
         private void btnQueryPrimOVR_Click(object sender, EventArgs e)
         {
             queryPrimaryOVR();
             lblQueryDoneExecuting();
+            // [gigne00] : 20151013 - Insert this method after lblQueryDoneExecuting();
+            // this monitors if value from the textbox has already been archived/deleted or not
+            Int64 iHolder;
+            iHolder = Convert.ToInt64(tbPrimOVR.Text);
+            iHolder = Int64.Parse(tbPrimOVR.Text);
+
+            if (iHolder == 0)
+            {
+                lblDeleted.ForeColor = Color.Green;
+                lblDeleted.Text = label27.Text + " Rows are deleted!";
+            }
+            else if (iHolder > 0)
+            {
+                lblDeleted.ForeColor = Color.Red;
+                lblDeleted.Text = label27.Text + " Rows NOT YET deleted!";
+            }
         }
         private void btnQueryCountEmpUDF_Click(object sender, EventArgs e)
         {
@@ -825,56 +1053,69 @@ namespace WorkbrainArchivingTool
         private void btnQueryArchWS_MouseDown(object sender, MouseEventArgs e)
         {
             lblQueryExecuting();
+            lblQueryWS();
         }
         private void btnQueryArchWD_MouseDown(object sender, MouseEventArgs e)
         {
             lblQueryExecuting();
+            lblQueryWD();
         }
         private void btnQueryArchCTP_MouseDown(object sender, MouseEventArgs e)
         {
             lblQueryExecuting();
+            lblQueryCTP();
         }
         private void btnQueryArchEBL_MouseDown(object sender, MouseEventArgs e)
         {
             lblQueryExecuting();
+            lblQueryEBL();
         }
         private void btnQueryArchWDA_MouseDown(object sender, MouseEventArgs e)
         {
             lblQueryExecuting();
+            lblQueryWDA();
         }
         private void btnQueryArchOVR_MouseDown(object sender, MouseEventArgs e)
         {
             lblQueryExecuting();
+            lblQueryOVR();
         }
         private void btnQueryPrimWS_MouseDown(object sender, MouseEventArgs e)
         {
             lblQueryExecuting();
+            lblPrimQueryWS();
         }
         private void btnQueryPrimWD_MouseDown(object sender, MouseEventArgs e)
         {
             lblQueryExecuting();
+            lblPrimQueryWD();
         }
         private void btnQueryPrimCTP_MouseDown(object sender, MouseEventArgs e)
         {
             lblQueryExecuting();
+            lblPrimQueryCTP();
         }
         private void btnQueryPrimEBL_MouseDown(object sender, MouseEventArgs e)
         {
             lblQueryExecuting();
+            lblPrimQueryEBL();
         }
         private void btnQueryPrimWDA_MouseDown(object sender, MouseEventArgs e)
         {
             lblQueryExecuting();
+            lblPrimQueryWDA();
         }
         private void btnQueryPrimOVR_MouseDown(object sender, MouseEventArgs e)
         {
             lblQueryExecuting();
+            lblPrimQueryOVR();
         }
         private void btnQueryCountEmpUDF_MouseDown(object sender, MouseEventArgs e)
         {
             lblQueryExecuting();
         }
         #endregion MOUSE DOWN EVENTS
+
 
 
         #region SFTP CONNECTION FUNCTIONALITY

@@ -144,6 +144,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblArchived = new System.Windows.Forms.Label();
             this.lblDeleted = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -277,7 +280,7 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 175);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(702, 425);
+            this.tabControl1.Size = new System.Drawing.Size(702, 459);
             this.tabControl1.TabIndex = 10;
             // 
             // tabPage1
@@ -846,6 +849,9 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.label34);
+            this.tabPage4.Controls.Add(this.label33);
+            this.tabPage4.Controls.Add(this.label32);
             this.tabPage4.Controls.Add(this.lblDeleted);
             this.tabPage4.Controls.Add(this.lblArchived);
             this.tabPage4.Controls.Add(this.btnQueryCountEmpUDF);
@@ -893,7 +899,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 26);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(694, 395);
+            this.tabPage4.Size = new System.Drawing.Size(694, 429);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Check WB Database";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -940,7 +946,7 @@
             // 
             this.rtLogging.Location = new System.Drawing.Point(470, 14);
             this.rtLogging.Name = "rtLogging";
-            this.rtLogging.Size = new System.Drawing.Size(209, 363);
+            this.rtLogging.Size = new System.Drawing.Size(209, 374);
             this.rtLogging.TabIndex = 68;
             this.rtLogging.Text = "";
             // 
@@ -1294,7 +1300,7 @@
             this.label29.AutoSize = true;
             this.label29.BackColor = System.Drawing.Color.Black;
             this.label29.ForeColor = System.Drawing.Color.White;
-            this.label29.Location = new System.Drawing.Point(33, 621);
+            this.label29.Location = new System.Drawing.Point(33, 644);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(41, 13);
             this.label29.TabIndex = 68;
@@ -1303,7 +1309,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::WorkbrainArchivingTool.Properties.Resources.ArchivingFooter;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 618);
+            this.pictureBox2.Location = new System.Drawing.Point(0, 640);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(776, 20);
             this.pictureBox2.TabIndex = 11;
@@ -1321,7 +1327,7 @@
             // lblArchived
             // 
             this.lblArchived.AutoSize = true;
-            this.lblArchived.Location = new System.Drawing.Point(12, 351);
+            this.lblArchived.Location = new System.Drawing.Point(93, 354);
             this.lblArchived.Name = "lblArchived";
             this.lblArchived.Size = new System.Drawing.Size(38, 17);
             this.lblArchived.TabIndex = 73;
@@ -1330,17 +1336,47 @@
             // lblDeleted
             // 
             this.lblDeleted.AutoSize = true;
-            this.lblDeleted.Location = new System.Drawing.Point(12, 366);
+            this.lblDeleted.Location = new System.Drawing.Point(93, 372);
             this.lblDeleted.Name = "lblDeleted";
             this.lblDeleted.Size = new System.Drawing.Size(38, 17);
             this.lblDeleted.TabIndex = 74;
             this.lblDeleted.Text = "------";
             // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.Location = new System.Drawing.Point(280, 407);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(404, 13);
+            this.label32.TabIndex = 75;
+            this.label32.Text = "*Note : Query results are based upon the selected Start and End dates above.";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.Location = new System.Drawing.Point(12, 353);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(84, 17);
+            this.label33.TabIndex = 76;
+            this.label33.Text = "ARCHSTAT : ";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.Location = new System.Drawing.Point(15, 370);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(81, 17);
+            this.label34.TabIndex = 77;
+            this.label34.Text = "PRIMSTAT : ";
+            // 
             // Form_MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(726, 637);
+            this.ClientSize = new System.Drawing.Size(726, 660);
             this.Controls.Add(this.label29);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.tabControl1);
@@ -1354,6 +1390,7 @@
             this.Controls.Add(this.startDate_DT);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form_MainForm";
@@ -1494,5 +1531,8 @@
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label lblDeleted;
         private System.Windows.Forms.Label lblArchived;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label33;
     }
 }
