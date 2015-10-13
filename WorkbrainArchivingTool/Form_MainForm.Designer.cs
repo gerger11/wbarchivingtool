@@ -82,6 +82,9 @@
             this.rtPrimaryWS = new System.Windows.Forms.RichTextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.button16 = new System.Windows.Forms.Button();
+            this.rtSelectEmpUDF = new System.Windows.Forms.RichTextBox();
+            this.label30 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.button13 = new System.Windows.Forms.Button();
@@ -94,6 +97,9 @@
             this.rtUpdateEmpUDF = new System.Windows.Forms.RichTextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.btnQueryCountEmpUDF = new System.Windows.Forms.Button();
+            this.tbCountEmpUDF = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
             this.lblQueryStat = new System.Windows.Forms.Label();
             this.rtLogging = new System.Windows.Forms.RichTextBox();
             this.btnCheckBoundary = new System.Windows.Forms.Button();
@@ -136,12 +142,8 @@
             this.label29 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label30 = new System.Windows.Forms.Label();
-            this.rtSelectEmpUDF = new System.Windows.Forms.RichTextBox();
-            this.button16 = new System.Windows.Forms.Button();
-            this.btnQueryCountEmpUDF = new System.Windows.Forms.Button();
-            this.tbCountEmpUDF = new System.Windows.Forms.TextBox();
-            this.label31 = new System.Windows.Forms.Label();
+            this.lblArchived = new System.Windows.Forms.Label();
+            this.lblDeleted = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -706,6 +708,35 @@
             this.tabPage3.Text = "Queries - Updates";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // button16
+            // 
+            this.button16.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button16.Location = new System.Drawing.Point(220, 308);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(119, 21);
+            this.button16.TabIndex = 42;
+            this.button16.Text = "Copy to Clipboard";
+            this.button16.UseVisualStyleBackColor = true;
+            // 
+            // rtSelectEmpUDF
+            // 
+            this.rtSelectEmpUDF.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtSelectEmpUDF.Location = new System.Drawing.Point(8, 209);
+            this.rtSelectEmpUDF.Name = "rtSelectEmpUDF";
+            this.rtSelectEmpUDF.Size = new System.Drawing.Size(331, 93);
+            this.rtSelectEmpUDF.TabIndex = 41;
+            this.rtSelectEmpUDF.Text = "";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(6, 193);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(141, 13);
+            this.label30.TabIndex = 40;
+            this.label30.Text = "Select Employee UDF Data";
+            // 
             // label19
             // 
             this.label19.AutoSize = true;
@@ -815,6 +846,8 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.lblDeleted);
+            this.tabPage4.Controls.Add(this.lblArchived);
             this.tabPage4.Controls.Add(this.btnQueryCountEmpUDF);
             this.tabPage4.Controls.Add(this.tbCountEmpUDF);
             this.tabPage4.Controls.Add(this.label31);
@@ -865,11 +898,39 @@
             this.tabPage4.Text = "Check WB Database";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // btnQueryCountEmpUDF
+            // 
+            this.btnQueryCountEmpUDF.Location = new System.Drawing.Point(283, 300);
+            this.btnQueryCountEmpUDF.Name = "btnQueryCountEmpUDF";
+            this.btnQueryCountEmpUDF.Size = new System.Drawing.Size(20, 26);
+            this.btnQueryCountEmpUDF.TabIndex = 72;
+            this.btnQueryCountEmpUDF.Text = "Q";
+            this.btnQueryCountEmpUDF.UseVisualStyleBackColor = true;
+            this.btnQueryCountEmpUDF.Click += new System.EventHandler(this.btnQueryCountEmpUDF_Click);
+            this.btnQueryCountEmpUDF.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnQueryCountEmpUDF_MouseDown);
+            // 
+            // tbCountEmpUDF
+            // 
+            this.tbCountEmpUDF.Location = new System.Drawing.Point(166, 301);
+            this.tbCountEmpUDF.Name = "tbCountEmpUDF";
+            this.tbCountEmpUDF.Size = new System.Drawing.Size(115, 25);
+            this.tbCountEmpUDF.TabIndex = 71;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.Location = new System.Drawing.Point(12, 304);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(151, 17);
+            this.label31.TabIndex = 70;
+            this.label31.Text = "Count Emp UDF Record";
+            // 
             // lblQueryStat
             // 
             this.lblQueryStat.AutoSize = true;
             this.lblQueryStat.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQueryStat.Location = new System.Drawing.Point(17, 360);
+            this.lblQueryStat.Location = new System.Drawing.Point(12, 334);
             this.lblQueryStat.Name = "lblQueryStat";
             this.lblQueryStat.Size = new System.Drawing.Size(38, 17);
             this.lblQueryStat.TabIndex = 69;
@@ -1257,62 +1318,23 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // label30
+            // lblArchived
             // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(6, 193);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(141, 13);
-            this.label30.TabIndex = 40;
-            this.label30.Text = "Select Employee UDF Data";
+            this.lblArchived.AutoSize = true;
+            this.lblArchived.Location = new System.Drawing.Point(12, 351);
+            this.lblArchived.Name = "lblArchived";
+            this.lblArchived.Size = new System.Drawing.Size(38, 17);
+            this.lblArchived.TabIndex = 73;
+            this.lblArchived.Text = "------";
             // 
-            // rtSelectEmpUDF
+            // lblDeleted
             // 
-            this.rtSelectEmpUDF.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtSelectEmpUDF.Location = new System.Drawing.Point(8, 209);
-            this.rtSelectEmpUDF.Name = "rtSelectEmpUDF";
-            this.rtSelectEmpUDF.Size = new System.Drawing.Size(331, 93);
-            this.rtSelectEmpUDF.TabIndex = 41;
-            this.rtSelectEmpUDF.Text = "";
-            // 
-            // button16
-            // 
-            this.button16.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button16.Location = new System.Drawing.Point(220, 308);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(119, 21);
-            this.button16.TabIndex = 42;
-            this.button16.Text = "Copy to Clipboard";
-            this.button16.UseVisualStyleBackColor = true;
-            // 
-            // btnQueryCountEmpUDF
-            // 
-            this.btnQueryCountEmpUDF.Location = new System.Drawing.Point(283, 314);
-            this.btnQueryCountEmpUDF.Name = "btnQueryCountEmpUDF";
-            this.btnQueryCountEmpUDF.Size = new System.Drawing.Size(20, 26);
-            this.btnQueryCountEmpUDF.TabIndex = 72;
-            this.btnQueryCountEmpUDF.Text = "Q";
-            this.btnQueryCountEmpUDF.UseVisualStyleBackColor = true;
-            this.btnQueryCountEmpUDF.Click += new System.EventHandler(this.btnQueryCountEmpUDF_Click);
-            this.btnQueryCountEmpUDF.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnQueryCountEmpUDF_MouseDown);
-            // 
-            // tbCountEmpUDF
-            // 
-            this.tbCountEmpUDF.Location = new System.Drawing.Point(166, 315);
-            this.tbCountEmpUDF.Name = "tbCountEmpUDF";
-            this.tbCountEmpUDF.Size = new System.Drawing.Size(115, 25);
-            this.tbCountEmpUDF.TabIndex = 71;
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(12, 318);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(151, 17);
-            this.label31.TabIndex = 70;
-            this.label31.Text = "Count Emp UDF Record";
+            this.lblDeleted.AutoSize = true;
+            this.lblDeleted.Location = new System.Drawing.Point(12, 366);
+            this.lblDeleted.Name = "lblDeleted";
+            this.lblDeleted.Size = new System.Drawing.Size(38, 17);
+            this.lblDeleted.TabIndex = 74;
+            this.lblDeleted.Text = "------";
             // 
             // Form_MainForm
             // 
@@ -1470,5 +1492,7 @@
         private System.Windows.Forms.Button btnQueryCountEmpUDF;
         private System.Windows.Forms.TextBox tbCountEmpUDF;
         private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label lblDeleted;
+        private System.Windows.Forms.Label lblArchived;
     }
 }

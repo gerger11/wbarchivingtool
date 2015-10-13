@@ -116,7 +116,11 @@ namespace WorkbrainArchivingTool
         private void btnClearQueryResults_Click(object sender, EventArgs e)
         {
             lblQueryStat.Text = "------";
+            lblArchived.Text = "------";
+            lblDeleted.Text = "------";
             lblQueryStat.ForeColor = Color.Black;
+            lblArchived.ForeColor = Color.Black;
+            lblDeleted.ForeColor = Color.Black;
             clearWBQueriesFields();
         }
         public void lblQueryExecuting()
@@ -720,7 +724,21 @@ namespace WorkbrainArchivingTool
         private void btnQueryArchWS_Click(object sender, EventArgs e)
         {
             queryArchiveWS();
-            lblQueryDoneExecuting();            
+            lblQueryDoneExecuting();
+            Int64 iHolder;
+            iHolder = Convert.ToInt64(tbArchWS.Text);
+            iHolder = Int64.Parse(tbArchWS.Text);
+
+            if (iHolder > 0)
+            {
+                lblArchived.ForeColor = Color.Green;
+                lblArchived.Text = "Rows are archived!";
+            }
+            else if (iHolder == 0)
+            {
+                lblArchived.ForeColor = Color.Red;
+                lblArchived.Text = "Rows NOT YET archived!";
+            }
         }
         private void btnQueryArchWD_Click(object sender, EventArgs e)
         {
@@ -750,7 +768,22 @@ namespace WorkbrainArchivingTool
         private void btnQueryPrimWS_Click(object sender, EventArgs e)
         {
             queryPrimaryWS();
-            lblQueryDoneExecuting();            
+            lblQueryDoneExecuting();
+
+            Int64 iHolder;
+            iHolder = Convert.ToInt64(tbPrimWS.Text);
+            iHolder = Int64.Parse(tbPrimWS.Text);
+
+            if (iHolder == 0)
+            {
+                lblDeleted.ForeColor = Color.Green;
+                lblDeleted.Text = "Rows are deleted!";
+            }
+            else if (iHolder > 0)
+            {
+                lblDeleted.ForeColor = Color.Red;
+                lblDeleted.Text = "Rows NOT YET deleted!";
+            }
         }
         private void btnQueryPrimWD_Click(object sender, EventArgs e)
         {
@@ -842,6 +875,7 @@ namespace WorkbrainArchivingTool
             lblQueryExecuting();
         }
         #endregion MOUSE DOWN EVENTS
+
 
         #region SFTP CONNECTION FUNCTIONALITY
 
