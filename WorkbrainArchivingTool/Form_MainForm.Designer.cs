@@ -81,22 +81,12 @@
             this.label13 = new System.Windows.Forms.Label();
             this.rtPrimaryWS = new System.Windows.Forms.RichTextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.button16 = new System.Windows.Forms.Button();
-            this.rtSelectEmpUDF = new System.Windows.Forms.RichTextBox();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.button13 = new System.Windows.Forms.Button();
-            this.rtCheckBoundary = new System.Windows.Forms.RichTextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
-            this.rtUpdateRegistry = new System.Windows.Forms.RichTextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.rtUpdateEmpUDF = new System.Windows.Forms.RichTextBox();
-            this.label17 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.lblDeleted = new System.Windows.Forms.Label();
+            this.lblArchived = new System.Windows.Forms.Label();
             this.btnQueryCountEmpUDF = new System.Windows.Forms.Button();
             this.tbCountEmpUDF = new System.Windows.Forms.TextBox();
             this.label31 = new System.Windows.Forms.Label();
@@ -142,19 +132,32 @@
             this.label29 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lblArchived = new System.Windows.Forms.Label();
-            this.lblDeleted = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.rtUpdateEmpUDF = new System.Windows.Forms.RichTextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.rtUpdateRegistry = new System.Windows.Forms.RichTextBox();
+            this.btnCpyEmpUDFData = new System.Windows.Forms.Button();
+            this.button14 = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
+            this.rtCheckBoundary = new System.Windows.Forms.RichTextBox();
+            this.button13 = new System.Windows.Forms.Button();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.rtSelectEmpUDF = new System.Windows.Forms.RichTextBox();
+            this.button16 = new System.Windows.Forms.Button();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.lblCopied = new System.Windows.Forms.Label();
+            this.lblCopied2 = new System.Windows.Forms.Label();
+            this.lblCopied3 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -188,6 +191,7 @@
             this.aboutTheToolToolStripMenuItem1.Name = "aboutTheToolToolStripMenuItem1";
             this.aboutTheToolToolStripMenuItem1.Size = new System.Drawing.Size(151, 22);
             this.aboutTheToolToolStripMenuItem1.Text = "About the tool";
+            this.aboutTheToolToolStripMenuItem1.Click += new System.EventHandler(this.aboutTheToolToolStripMenuItem1_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -285,6 +289,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.lblCopied2);
             this.tabPage1.Controls.Add(this.button5);
             this.tabPage1.Controls.Add(this.button6);
             this.tabPage1.Controls.Add(this.rtArchiveOVR);
@@ -306,7 +311,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 26);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(694, 395);
+            this.tabPage1.Size = new System.Drawing.Size(694, 429);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Queries - Archive Tables";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -320,6 +325,7 @@
             this.button5.TabIndex = 17;
             this.button5.Text = "Copy to Clipboard";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
@@ -330,6 +336,7 @@
             this.button6.TabIndex = 16;
             this.button6.Text = "Copy to Clipboard";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // rtArchiveOVR
             // 
@@ -378,6 +385,7 @@
             this.button3.TabIndex = 11;
             this.button3.Text = "Copy to Clipboard";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -388,6 +396,7 @@
             this.button4.TabIndex = 10;
             this.button4.Text = "Copy to Clipboard";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // rtArchiveEBL
             // 
@@ -436,6 +445,7 @@
             this.button2.TabIndex = 5;
             this.button2.Text = "Copy to Clipboard";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -446,6 +456,7 @@
             this.button1.TabIndex = 4;
             this.button1.Text = "Copy to Clipboard";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // rtArchiveWD
             // 
@@ -487,6 +498,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.lblCopied3);
             this.tabPage2.Controls.Add(this.button7);
             this.tabPage2.Controls.Add(this.button8);
             this.tabPage2.Controls.Add(this.rtPrimaryOVR);
@@ -508,7 +520,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 26);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(694, 395);
+            this.tabPage2.Size = new System.Drawing.Size(694, 429);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Queries - Primary Tables";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -522,6 +534,7 @@
             this.button7.TabIndex = 35;
             this.button7.Text = "Copy to Clipboard";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button8
             // 
@@ -532,6 +545,7 @@
             this.button8.TabIndex = 34;
             this.button8.Text = "Copy to Clipboard";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // rtPrimaryOVR
             // 
@@ -580,6 +594,7 @@
             this.button9.TabIndex = 29;
             this.button9.Text = "Copy to Clipboard";
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button10
             // 
@@ -590,6 +605,7 @@
             this.button10.TabIndex = 28;
             this.button10.Text = "Copy to Clipboard";
             this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // rtPrimaryEBL
             // 
@@ -638,6 +654,7 @@
             this.button11.TabIndex = 23;
             this.button11.Text = "Copy to Clipboard";
             this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // button12
             // 
@@ -648,6 +665,7 @@
             this.button12.TabIndex = 22;
             this.button12.Text = "Copy to Clipboard";
             this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // rtPrimaryWD
             // 
@@ -686,166 +704,6 @@
             this.label14.Size = new System.Drawing.Size(84, 13);
             this.label14.TabIndex = 18;
             this.label14.Text = "Work Summary";
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.button16);
-            this.tabPage3.Controls.Add(this.rtSelectEmpUDF);
-            this.tabPage3.Controls.Add(this.label30);
-            this.tabPage3.Controls.Add(this.label19);
-            this.tabPage3.Controls.Add(this.label18);
-            this.tabPage3.Controls.Add(this.button13);
-            this.tabPage3.Controls.Add(this.rtCheckBoundary);
-            this.tabPage3.Controls.Add(this.label15);
-            this.tabPage3.Controls.Add(this.button14);
-            this.tabPage3.Controls.Add(this.button15);
-            this.tabPage3.Controls.Add(this.rtUpdateRegistry);
-            this.tabPage3.Controls.Add(this.label16);
-            this.tabPage3.Controls.Add(this.rtUpdateEmpUDF);
-            this.tabPage3.Controls.Add(this.label17);
-            this.tabPage3.Location = new System.Drawing.Point(4, 26);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(694, 395);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Queries - Updates";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // button16
-            // 
-            this.button16.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button16.Location = new System.Drawing.Point(220, 308);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(119, 21);
-            this.button16.TabIndex = 42;
-            this.button16.Text = "Copy to Clipboard";
-            this.button16.UseVisualStyleBackColor = true;
-            // 
-            // rtSelectEmpUDF
-            // 
-            this.rtSelectEmpUDF.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtSelectEmpUDF.Location = new System.Drawing.Point(8, 209);
-            this.rtSelectEmpUDF.Name = "rtSelectEmpUDF";
-            this.rtSelectEmpUDF.Size = new System.Drawing.Size(331, 93);
-            this.rtSelectEmpUDF.TabIndex = 41;
-            this.rtSelectEmpUDF.Text = "";
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(6, 193);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(141, 13);
-            this.label30.TabIndex = 40;
-            this.label30.Text = "Select Employee UDF Data";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(385, 349);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(177, 13);
-            this.label19.TabIndex = 39;
-            this.label19.Text = "updating the Workbrain Registry";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(346, 336);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(319, 13);
-            this.label18.TabIndex = 39;
-            this.label18.Text = "*Note : Please execute Employee UDF Data query first before ";
-            // 
-            // button13
-            // 
-            this.button13.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button13.Location = new System.Drawing.Point(561, 308);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(119, 21);
-            this.button13.TabIndex = 38;
-            this.button13.Text = "Copy to Clipboard";
-            this.button13.UseVisualStyleBackColor = true;
-            // 
-            // rtCheckBoundary
-            // 
-            this.rtCheckBoundary.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtCheckBoundary.Location = new System.Drawing.Point(349, 209);
-            this.rtCheckBoundary.Name = "rtCheckBoundary";
-            this.rtCheckBoundary.Size = new System.Drawing.Size(331, 93);
-            this.rtCheckBoundary.TabIndex = 37;
-            this.rtCheckBoundary.Text = "";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(346, 193);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(118, 13);
-            this.label15.TabIndex = 36;
-            this.label15.Text = "Check Boundary Date";
-            // 
-            // button14
-            // 
-            this.button14.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button14.Location = new System.Drawing.Point(561, 169);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(119, 21);
-            this.button14.TabIndex = 35;
-            this.button14.Text = "Copy to Clipboard";
-            this.button14.UseVisualStyleBackColor = true;
-            // 
-            // button15
-            // 
-            this.button15.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button15.Location = new System.Drawing.Point(220, 169);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(119, 21);
-            this.button15.TabIndex = 34;
-            this.button15.Text = "Copy to Clipboard";
-            this.button15.UseVisualStyleBackColor = true;
-            // 
-            // rtUpdateRegistry
-            // 
-            this.rtUpdateRegistry.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtUpdateRegistry.Location = new System.Drawing.Point(349, 22);
-            this.rtUpdateRegistry.Name = "rtUpdateRegistry";
-            this.rtUpdateRegistry.Size = new System.Drawing.Size(331, 141);
-            this.rtUpdateRegistry.TabIndex = 33;
-            this.rtUpdateRegistry.Text = "";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(346, 5);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(147, 13);
-            this.label16.TabIndex = 32;
-            this.label16.Text = "Workbrain Registry Update";
-            // 
-            // rtUpdateEmpUDF
-            // 
-            this.rtUpdateEmpUDF.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtUpdateEmpUDF.Location = new System.Drawing.Point(8, 22);
-            this.rtUpdateEmpUDF.Name = "rtUpdateEmpUDF";
-            this.rtUpdateEmpUDF.Size = new System.Drawing.Size(331, 141);
-            this.rtUpdateEmpUDF.TabIndex = 31;
-            this.rtUpdateEmpUDF.Text = "";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(6, 5);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(108, 13);
-            this.label17.TabIndex = 30;
-            this.label17.Text = "Employee UDF Data";
             // 
             // tabPage4
             // 
@@ -903,6 +761,54 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Check WB Database";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.Location = new System.Drawing.Point(15, 370);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(81, 17);
+            this.label34.TabIndex = 77;
+            this.label34.Text = "PRIMSTAT : ";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.Location = new System.Drawing.Point(12, 353);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(84, 17);
+            this.label33.TabIndex = 76;
+            this.label33.Text = "ARCHSTAT : ";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.Location = new System.Drawing.Point(280, 407);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(404, 13);
+            this.label32.TabIndex = 75;
+            this.label32.Text = "*Note : Query results are based upon the selected Start and End dates above.";
+            // 
+            // lblDeleted
+            // 
+            this.lblDeleted.AutoSize = true;
+            this.lblDeleted.Location = new System.Drawing.Point(93, 372);
+            this.lblDeleted.Name = "lblDeleted";
+            this.lblDeleted.Size = new System.Drawing.Size(38, 17);
+            this.lblDeleted.TabIndex = 74;
+            this.lblDeleted.Text = "------";
+            // 
+            // lblArchived
+            // 
+            this.lblArchived.AutoSize = true;
+            this.lblArchived.Location = new System.Drawing.Point(93, 354);
+            this.lblArchived.Name = "lblArchived";
+            this.lblArchived.Size = new System.Drawing.Size(38, 17);
+            this.lblArchived.TabIndex = 73;
+            this.lblArchived.Text = "------";
             // 
             // btnQueryCountEmpUDF
             // 
@@ -1324,53 +1230,200 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // lblArchived
+            // label17
             // 
-            this.lblArchived.AutoSize = true;
-            this.lblArchived.Location = new System.Drawing.Point(93, 354);
-            this.lblArchived.Name = "lblArchived";
-            this.lblArchived.Size = new System.Drawing.Size(38, 17);
-            this.lblArchived.TabIndex = 73;
-            this.lblArchived.Text = "------";
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(6, 5);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(108, 13);
+            this.label17.TabIndex = 30;
+            this.label17.Text = "Employee UDF Data";
             // 
-            // lblDeleted
+            // rtUpdateEmpUDF
             // 
-            this.lblDeleted.AutoSize = true;
-            this.lblDeleted.Location = new System.Drawing.Point(93, 372);
-            this.lblDeleted.Name = "lblDeleted";
-            this.lblDeleted.Size = new System.Drawing.Size(38, 17);
-            this.lblDeleted.TabIndex = 74;
-            this.lblDeleted.Text = "------";
+            this.rtUpdateEmpUDF.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtUpdateEmpUDF.Location = new System.Drawing.Point(8, 22);
+            this.rtUpdateEmpUDF.Name = "rtUpdateEmpUDF";
+            this.rtUpdateEmpUDF.Size = new System.Drawing.Size(331, 141);
+            this.rtUpdateEmpUDF.TabIndex = 31;
+            this.rtUpdateEmpUDF.Text = "";
             // 
-            // label32
+            // label16
             // 
-            this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.Location = new System.Drawing.Point(280, 407);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(404, 13);
-            this.label32.TabIndex = 75;
-            this.label32.Text = "*Note : Query results are based upon the selected Start and End dates above.";
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(346, 5);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(147, 13);
+            this.label16.TabIndex = 32;
+            this.label16.Text = "Workbrain Registry Update";
             // 
-            // label33
+            // rtUpdateRegistry
             // 
-            this.label33.AutoSize = true;
-            this.label33.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.Location = new System.Drawing.Point(12, 353);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(84, 17);
-            this.label33.TabIndex = 76;
-            this.label33.Text = "ARCHSTAT : ";
+            this.rtUpdateRegistry.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtUpdateRegistry.Location = new System.Drawing.Point(349, 22);
+            this.rtUpdateRegistry.Name = "rtUpdateRegistry";
+            this.rtUpdateRegistry.Size = new System.Drawing.Size(331, 141);
+            this.rtUpdateRegistry.TabIndex = 33;
+            this.rtUpdateRegistry.Text = "";
             // 
-            // label34
+            // btnCpyEmpUDFData
             // 
-            this.label34.AutoSize = true;
-            this.label34.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.Location = new System.Drawing.Point(15, 370);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(81, 17);
-            this.label34.TabIndex = 77;
-            this.label34.Text = "PRIMSTAT : ";
+            this.btnCpyEmpUDFData.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCpyEmpUDFData.Location = new System.Drawing.Point(220, 169);
+            this.btnCpyEmpUDFData.Name = "btnCpyEmpUDFData";
+            this.btnCpyEmpUDFData.Size = new System.Drawing.Size(119, 21);
+            this.btnCpyEmpUDFData.TabIndex = 34;
+            this.btnCpyEmpUDFData.Text = "Copy to Clipboard";
+            this.btnCpyEmpUDFData.UseVisualStyleBackColor = true;
+            this.btnCpyEmpUDFData.Click += new System.EventHandler(this.button15_Click);
+            // 
+            // button14
+            // 
+            this.button14.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button14.Location = new System.Drawing.Point(561, 169);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(119, 21);
+            this.button14.TabIndex = 35;
+            this.button14.Text = "Copy to Clipboard";
+            this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(346, 193);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(118, 13);
+            this.label15.TabIndex = 36;
+            this.label15.Text = "Check Boundary Date";
+            // 
+            // rtCheckBoundary
+            // 
+            this.rtCheckBoundary.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtCheckBoundary.Location = new System.Drawing.Point(349, 209);
+            this.rtCheckBoundary.Name = "rtCheckBoundary";
+            this.rtCheckBoundary.Size = new System.Drawing.Size(331, 93);
+            this.rtCheckBoundary.TabIndex = 37;
+            this.rtCheckBoundary.Text = "";
+            // 
+            // button13
+            // 
+            this.button13.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button13.Location = new System.Drawing.Point(561, 308);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(119, 21);
+            this.button13.TabIndex = 38;
+            this.button13.Text = "Copy to Clipboard";
+            this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(346, 336);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(319, 13);
+            this.label18.TabIndex = 39;
+            this.label18.Text = "*Note : Please execute Employee UDF Data query first before ";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(385, 349);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(177, 13);
+            this.label19.TabIndex = 39;
+            this.label19.Text = "updating the Workbrain Registry";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(6, 193);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(141, 13);
+            this.label30.TabIndex = 40;
+            this.label30.Text = "Select Employee UDF Data";
+            // 
+            // rtSelectEmpUDF
+            // 
+            this.rtSelectEmpUDF.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtSelectEmpUDF.Location = new System.Drawing.Point(8, 209);
+            this.rtSelectEmpUDF.Name = "rtSelectEmpUDF";
+            this.rtSelectEmpUDF.Size = new System.Drawing.Size(331, 93);
+            this.rtSelectEmpUDF.TabIndex = 41;
+            this.rtSelectEmpUDF.Text = "";
+            // 
+            // button16
+            // 
+            this.button16.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button16.Location = new System.Drawing.Point(220, 308);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(119, 21);
+            this.button16.TabIndex = 42;
+            this.button16.Text = "Copy to Clipboard";
+            this.button16.UseVisualStyleBackColor = true;
+            this.button16.Click += new System.EventHandler(this.button16_Click);
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.lblCopied);
+            this.tabPage3.Controls.Add(this.button16);
+            this.tabPage3.Controls.Add(this.rtSelectEmpUDF);
+            this.tabPage3.Controls.Add(this.label30);
+            this.tabPage3.Controls.Add(this.label19);
+            this.tabPage3.Controls.Add(this.label18);
+            this.tabPage3.Controls.Add(this.button13);
+            this.tabPage3.Controls.Add(this.rtCheckBoundary);
+            this.tabPage3.Controls.Add(this.label15);
+            this.tabPage3.Controls.Add(this.button14);
+            this.tabPage3.Controls.Add(this.btnCpyEmpUDFData);
+            this.tabPage3.Controls.Add(this.rtUpdateRegistry);
+            this.tabPage3.Controls.Add(this.label16);
+            this.tabPage3.Controls.Add(this.rtUpdateEmpUDF);
+            this.tabPage3.Controls.Add(this.label17);
+            this.tabPage3.Location = new System.Drawing.Point(4, 26);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(694, 429);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Queries - Updates";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // lblCopied
+            // 
+            this.lblCopied.AutoSize = true;
+            this.lblCopied.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCopied.Location = new System.Drawing.Point(6, 408);
+            this.lblCopied.Name = "lblCopied";
+            this.lblCopied.Size = new System.Drawing.Size(38, 17);
+            this.lblCopied.TabIndex = 43;
+            this.lblCopied.Text = "------";
+            // 
+            // lblCopied2
+            // 
+            this.lblCopied2.AutoSize = true;
+            this.lblCopied2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCopied2.Location = new System.Drawing.Point(4, 409);
+            this.lblCopied2.Name = "lblCopied2";
+            this.lblCopied2.Size = new System.Drawing.Size(38, 17);
+            this.lblCopied2.TabIndex = 44;
+            this.lblCopied2.Text = "------";
+            // 
+            // lblCopied3
+            // 
+            this.lblCopied3.AutoSize = true;
+            this.lblCopied3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCopied3.Location = new System.Drawing.Point(4, 409);
+            this.lblCopied3.Name = "lblCopied3";
+            this.lblCopied3.Size = new System.Drawing.Size(38, 17);
+            this.lblCopied3.TabIndex = 45;
+            this.lblCopied3.Text = "------";
             // 
             // Form_MainForm
             // 
@@ -1403,12 +1456,12 @@
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1433,7 +1486,6 @@
         private System.Windows.Forms.RichTextBox rtArchiveWS;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
@@ -1467,17 +1519,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.RichTextBox rtPrimaryWS;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.RichTextBox rtCheckBoundary;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Button button15;
-        private System.Windows.Forms.RichTextBox rtUpdateRegistry;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.RichTextBox rtUpdateEmpUDF;
-        private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox tbBoundaryDate;
         private System.Windows.Forms.Label label28;
@@ -1523,9 +1564,6 @@
         private System.Windows.Forms.ToolStripMenuItem aboutTheToolToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.Label lblQueryStat;
-        private System.Windows.Forms.Button button16;
-        private System.Windows.Forms.RichTextBox rtSelectEmpUDF;
-        private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Button btnQueryCountEmpUDF;
         private System.Windows.Forms.TextBox tbCountEmpUDF;
         private System.Windows.Forms.Label label31;
@@ -1534,5 +1572,23 @@
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label lblCopied2;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.Label lblCopied;
+        private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.RichTextBox rtSelectEmpUDF;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.RichTextBox rtCheckBoundary;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button btnCpyEmpUDFData;
+        private System.Windows.Forms.RichTextBox rtUpdateRegistry;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.RichTextBox rtUpdateEmpUDF;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label lblCopied3;
     }
 }

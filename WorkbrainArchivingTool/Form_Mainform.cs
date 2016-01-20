@@ -67,12 +67,70 @@ namespace WorkbrainArchivingTool
             label29.Show();
         }
 
+        public void clearRichTextBoxes()
+        {
+            rtArchiveWD.Clear();
+            rtArchiveWDA.Clear();
+            rtArchiveWS.Clear();
+            rtArchiveCTP.Clear();
+            rtArchiveEBL.Clear();
+            rtArchiveOVR.Clear();
+
+            rtPrimaryWD.Clear();
+            rtPrimaryWDA.Clear();
+            rtPrimaryWS.Clear();
+            rtPrimaryCTP.Clear();
+            rtPrimaryEBL.Clear();
+            rtPrimaryOVR.Clear();
+        }
+
+        public void disableCopyButtons()
+        {
+            button1.Enabled =          false;
+            button2.Enabled =          false;
+            button4.Enabled =          false;
+            button3.Enabled =          false;
+            button6.Enabled =          false;
+            button5.Enabled =          false;
+            button12.Enabled =         false;
+            button11.Enabled =         false;
+            button10.Enabled =         false;
+            button9.Enabled =          false;
+            button8.Enabled =          false;
+            button7.Enabled =          false;
+            btnCpyEmpUDFData.Enabled = false;
+            button14.Enabled =         false;
+            button16.Enabled =         false;
+            button13.Enabled =         false;
+        }
+
+        public void enableCopyButtons()
+        {
+            button1.Enabled = true;
+            button2.Enabled = true;
+            button4.Enabled = true;
+            button3.Enabled = true;
+            button6.Enabled = true;
+            button5.Enabled = true;
+            button12.Enabled = true;
+            button11.Enabled = true;
+            button10.Enabled = true;
+            button9.Enabled = true;
+            button8.Enabled = true;
+            button7.Enabled = true;
+            btnCpyEmpUDFData.Enabled = true;
+            button14.Enabled = true;
+            button16.Enabled = true;
+            button13.Enabled = true;
+        }
+
         #endregion DATES FUNCTIONS
 
         #region FORM FUNCTIONALITIES
         private void Form_MainForm_Load(object sender, EventArgs e)
         {
             dateToday();
+            disableCopyButtons();
         }//btnGenerate()
         private void startDate_DT_ValueChanged(object sender, EventArgs e)
         {
@@ -85,12 +143,15 @@ namespace WorkbrainArchivingTool
         }
         private void btnGenerate_Click(object sender, EventArgs e)
         {
-            if (startDate_DT.Value <= endDate_DT.Value && (startDate_DT.Value.DayOfWeek != DayOfWeek.Sunday))
+            if (startDate_DT.Value <= endDate_DT.Value && (startDate_DT.Value.DayOfWeek != DayOfWeek.Sunday) || tbStartDate.Text == "" || tbEndDate.Text == "")
             {
                 MessageBox.Show("Invalid date selection, the start date cannot be greater than or equal to the end date.\n\nSelect a valid value for Start Date (Note that this always starts on a SUNDAY)", "Invalid date", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                clearRichTextBoxes();
+                disableCopyButtons();
             }
             else
             {
+                enableCopyButtons();
                 archiveQueryWS();
                 archiveQueryWD();
                 archiveQueryCTP();
@@ -107,11 +168,30 @@ namespace WorkbrainArchivingTool
                 updateWorkbrainRegistry();
                 checkBoundaryDate();
                 selectEmpUDF();
+
+                // [gigne00] 20160120 - Disable richtextboxes during query generation
+
+                rtArchiveWD.Enabled = false;
+                rtArchiveWDA.Enabled = false;
+                rtArchiveWS.Enabled = false;
+                rtArchiveCTP.Enabled = false;
+                rtArchiveEBL.Enabled = false;
+                rtArchiveOVR.Enabled = false;
+
+                rtPrimaryWD.Enabled = false;
+                rtPrimaryWDA.Enabled = false;
+                rtPrimaryWS.Enabled = false;
+                rtPrimaryCTP.Enabled = false;
+                rtPrimaryEBL.Enabled = false;
+                rtPrimaryOVR.Enabled = false;
             }//else
         }
+
+        // [gigne00] 20160120 - Added functionality for clear button to clear contents of richtextboxes
         private void btnClear_Click(object sender, EventArgs e)
         {
-
+            clearRichTextBoxes();
+            disableCopyButtons();
         }
         private void btnClearQueryResults_Click(object sender, EventArgs e)
         {
@@ -1115,6 +1195,158 @@ namespace WorkbrainArchivingTool
             lblQueryExecuting();
         }
         #endregion MOUSE DOWN EVENTS
+
+        // [gigne00] 20160120 - Added about the tool form
+        private void aboutTheToolToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Form_AboutTheTool frmAbout = new Form_AboutTheTool();
+            frmAbout.ShowDialog();
+        }
+
+        // [gigne00] 20160120 - Added copy to clipboard functionality for copy buttons
+        private void button15_Click(object sender, EventArgs e)
+        {
+            Clipboard.Clear();    //Clear if any old value is there in Clipboard        
+            Clipboard.SetText(rtUpdateEmpUDF.Text); //Copy text to Clipboard
+            string strClip = Clipboard.GetText(); //Get text from Clipboard
+            lblCopied.ForeColor = Color.Green;
+            lblCopied.Text = "Update EmpUDFData copied to clipboard!";
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            Clipboard.Clear();    //Clear if any old value is there in Clipboard        
+            Clipboard.SetText(rtUpdateRegistry.Text); //Copy text to Clipboard
+            string strClip = Clipboard.GetText(); //Get text from Clipboard
+            lblCopied.ForeColor = Color.Green;
+            lblCopied.Text = "Update Registry Script copied to clipboard!";
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            Clipboard.Clear();    //Clear if any old value is there in Clipboard        
+            Clipboard.SetText(rtSelectEmpUDF.Text); //Copy text to Clipboard
+            string strClip = Clipboard.GetText(); //Get text from Clipboard
+            lblCopied.ForeColor = Color.Green;
+            lblCopied.Text = "Select EmpUDFData Script copied to clipboard!";
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            Clipboard.Clear();    //Clear if any old value is there in Clipboard        
+            Clipboard.SetText(rtCheckBoundary.Text); //Copy text to Clipboard
+            string strClip = Clipboard.GetText(); //Get text from Clipboard
+            lblCopied.ForeColor = Color.Green;
+            lblCopied.Text = "Check Boundary Date script copied to clipboard!";
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Clipboard.Clear();    //Clear if any old value is there in Clipboard        
+            Clipboard.SetText(rtArchiveWS.Text); //Copy text to Clipboard
+            string strClip = Clipboard.GetText(); //Get text from Clipboard
+            lblCopied2.ForeColor = Color.Green;
+            lblCopied2.Text = "Select script for Archive.Work_Summary copied to clipboard!";
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Clipboard.Clear();    //Clear if any old value is there in Clipboard        
+            Clipboard.SetText(rtArchiveWS.Text); //Copy text to Clipboard
+            string strClip = Clipboard.GetText(); //Get text from Clipboard
+            lblCopied2.ForeColor = Color.Green;
+            lblCopied2.Text = "Select script for Archive.Work_Detail copied to clipboard!";
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Clipboard.Clear();    //Clear if any old value is there in Clipboard        
+            Clipboard.SetText(rtArchiveCTP.Text); //Copy text to Clipboard
+            string strClip = Clipboard.GetText(); //Get text from Clipboard
+            lblCopied2.ForeColor = Color.Green;
+            lblCopied2.Text = "Select script for Archive.Clock_Tran_Processed copied to clipboard!";
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Clipboard.Clear();    //Clear if any old value is there in Clipboard        
+            Clipboard.SetText(rtArchiveEBL.Text); //Copy text to Clipboard
+            string strClip = Clipboard.GetText(); //Get text from Clipboard
+            lblCopied2.ForeColor = Color.Green;
+            lblCopied2.Text = "Select script for Archive.Employee_Balance_Log copied to clipboard!";
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Clipboard.Clear();    //Clear if any old value is there in Clipboard        
+            Clipboard.SetText(rtArchiveWDA.Text); //Copy text to Clipboard
+            string strClip = Clipboard.GetText(); //Get text from Clipboard
+            lblCopied2.ForeColor = Color.Green;
+            lblCopied2.Text = "Select script for Archive.Work_Detail_Adjust copied to clipboard!";
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Clipboard.Clear();    //Clear if any old value is there in Clipboard        
+            Clipboard.SetText(rtArchiveOVR.Text); //Copy text to Clipboard
+            string strClip = Clipboard.GetText(); //Get text from Clipboard
+            lblCopied2.ForeColor = Color.Green;
+            lblCopied2.Text = "Select script for Archive.Override copied to clipboard!";
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            Clipboard.Clear();    //Clear if any old value is there in Clipboard        
+            Clipboard.SetText(rtPrimaryWS.Text); //Copy text to Clipboard
+            string strClip = Clipboard.GetText(); //Get text from Clipboard
+            lblCopied3.ForeColor = Color.Green;
+            lblCopied3.Text = "Select script for ta00wb.Work_Summary copied to clipboard!";
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            Clipboard.Clear();    //Clear if any old value is there in Clipboard        
+            Clipboard.SetText(rtPrimaryWD.Text); //Copy text to Clipboard
+            string strClip = Clipboard.GetText(); //Get text from Clipboard
+            lblCopied3.ForeColor = Color.Green;
+            lblCopied3.Text = "Select script for ta00wb.Work_Detail copied to clipboard!";
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            Clipboard.Clear();    //Clear if any old value is there in Clipboard        
+            Clipboard.SetText(rtPrimaryCTP.Text); //Copy text to Clipboard
+            string strClip = Clipboard.GetText(); //Get text from Clipboard
+            lblCopied3.ForeColor = Color.Green;
+            lblCopied3.Text = "Select script for ta00wb.Clock_Tran_Processed copied to clipboard!";
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            Clipboard.Clear();    //Clear if any old value is there in Clipboard        
+            Clipboard.SetText(rtPrimaryEBL.Text); //Copy text to Clipboard
+            string strClip = Clipboard.GetText(); //Get text from Clipboard
+            lblCopied3.ForeColor = Color.Green;
+            lblCopied3.Text = "Select script for ta00wb.Employee_Balance_Log copied to clipboard!";
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Clipboard.Clear();    //Clear if any old value is there in Clipboard        
+            Clipboard.SetText(rtPrimaryWDA.Text); //Copy text to Clipboard
+            string strClip = Clipboard.GetText(); //Get text from Clipboard
+            lblCopied3.ForeColor = Color.Green;
+            lblCopied3.Text = "Select script for ta00wb.Work_Detail_Adjust copied to clipboard!";
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Clipboard.Clear();    //Clear if any old value is there in Clipboard        
+            Clipboard.SetText(rtPrimaryOVR.Text); //Copy text to Clipboard
+            string strClip = Clipboard.GetText(); //Get text from Clipboard
+            lblCopied3.ForeColor = Color.Green;
+            lblCopied3.Text = "Select script for ta00wb.Override copied to clipboard!";
+        }
 
 
 
