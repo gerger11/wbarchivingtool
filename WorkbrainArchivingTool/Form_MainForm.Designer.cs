@@ -150,6 +150,13 @@
             this.label29 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.button15 = new System.Windows.Forms.Button();
+            this.tbRequestNo = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -158,6 +165,7 @@
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tabPage5.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -280,6 +288,7 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(12, 175);
             this.tabControl1.Name = "tabControl1";
@@ -1425,6 +1434,80 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
+            // tabPage5
+            // 
+            this.tabPage5.BackColor = System.Drawing.Color.DarkGray;
+            this.tabPage5.Controls.Add(this.tbRequestNo);
+            this.tabPage5.Controls.Add(this.button15);
+            this.tabPage5.Controls.Add(this.comboBox1);
+            this.tabPage5.Controls.Add(this.label36);
+            this.tabPage5.Controls.Add(this.label35);
+            this.tabPage5.Controls.Add(this.webBrowser1);
+            this.tabPage5.Location = new System.Drawing.Point(4, 26);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(694, 429);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "ODR";
+            // 
+            // webBrowser1
+            // 
+            this.webBrowser1.Location = new System.Drawing.Point(6, 14);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.Size = new System.Drawing.Size(682, 383);
+            this.webBrowser1.TabIndex = 69;
+            this.webBrowser1.Url = new System.Uri("https://requestit.safeway.com/RequestCenter/default-login.jsp?NSA_LOGIN_NAME=", System.UriKind.Absolute);
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(7, 404);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(135, 17);
+            this.label35.TabIndex = 70;
+            this.label35.Text = "Requisition Number : ";
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(247, 404);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(102, 17);
+            this.label36.TabIndex = 72;
+            this.label36.Text = "Requested Job :";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "EXPORT - TAWWB02001",
+            "IMPORT - TAWWB02002",
+            "EXPORT/IMPORT - TAWWB02003",
+            "DELETE - TAWWB02004"});
+            this.comboBox1.Location = new System.Drawing.Point(356, 400);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(195, 25);
+            this.comboBox1.TabIndex = 73;
+            this.comboBox1.Text = "--Select Job--";
+            // 
+            // button15
+            // 
+            this.button15.Location = new System.Drawing.Point(593, 399);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(96, 29);
+            this.button15.TabIndex = 74;
+            this.button15.Text = "Log to File";
+            this.button15.UseVisualStyleBackColor = true;
+            this.button15.Click += new System.EventHandler(this.button15_Click_1);
+            // 
+            // tbRequestNo
+            // 
+            this.tbRequestNo.Location = new System.Drawing.Point(140, 400);
+            this.tbRequestNo.Name = "tbRequestNo";
+            this.tbRequestNo.Size = new System.Drawing.Size(100, 25);
+            this.tbRequestNo.TabIndex = 75;
+            // 
             // Form_MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1463,6 +1546,8 @@
             this.tabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1591,5 +1676,12 @@
         private System.Windows.Forms.RichTextBox rtUpdateEmpUDF;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label lblCopied3;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.WebBrowser webBrowser1;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.TextBox tbRequestNo;
+        private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label36;
     }
 }

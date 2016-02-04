@@ -1348,11 +1348,35 @@ namespace WorkbrainArchivingTool
             lblCopied3.Text = "Select script for ta00wb.Override copied to clipboard!";
         }
 
-
+        
 
         #region SFTP CONNECTION FUNCTIONALITY
 
         #endregion SFTP CONNERCTION FUNCTIONALITY
+
+        #region WEB BROWSER
+        // [gigne00] 20160204 - Updates for ODR connectivity, functionality and logging.
+        private void button15_Click_1(object sender, EventArgs e)
+        {
+            if (tbRequestNo.Text == "" || tbRequestNo.Text == null || string.IsNullOrWhiteSpace(tbRequestNo.Text))
+            {
+                MessageBox.Show("No request number indicated");
+            }
+            else
+            {
+                string strLog = System.DateTime.Today.ToShortDateString() + " LOG : RequestIT #" + tbRequestNo.Text + " . ODR for " + comboBox1.SelectedItem + ". This is for WED " + tbEndDate.Text + " @";
+                strLog = strLog.Replace("@", "" + System.Environment.NewLine);
+                MessageBox.Show("ODR Logged to File!", "ODR Log", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                //logger
+                string logFilePath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                using (TextWriter outputFile = new StreamWriter(logFilePath + @"\WBArchivingODR.txt", true))
+                {
+                    outputFile.Write(strLog);
+                }
+            }
+        }
+        #endregion WEB BROWSER
 
     }
 }
