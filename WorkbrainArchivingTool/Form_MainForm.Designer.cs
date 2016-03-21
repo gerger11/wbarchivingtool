@@ -100,8 +100,6 @@
             this.rtUpdateEmpUDF = new System.Windows.Forms.RichTextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.btnCancelProcess = new System.Windows.Forms.Button();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.label34 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
@@ -114,6 +112,7 @@
             this.rtLogging = new System.Windows.Forms.RichTextBox();
             this.btnCheckBoundary = new System.Windows.Forms.Button();
             this.btnClearQueryResults = new System.Windows.Forms.Button();
+            this.btnRunAllQueries = new System.Windows.Forms.Button();
             this.tbBoundaryDate = new System.Windows.Forms.TextBox();
             this.label28 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
@@ -155,12 +154,11 @@
             this.label36 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
-            this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.webBrowser2 = new System.Windows.Forms.WebBrowser();
             this.label29 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.webBrowser2 = new System.Windows.Forms.WebBrowser();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -168,9 +166,9 @@
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tabPage5.SuspendLayout();
-            this.tabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tabPage6.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -917,8 +915,6 @@
             // 
             // tabPage4
             // 
-            this.tabPage4.Controls.Add(this.btnCancelProcess);
-            this.tabPage4.Controls.Add(this.progressBar1);
             this.tabPage4.Controls.Add(this.label34);
             this.tabPage4.Controls.Add(this.label33);
             this.tabPage4.Controls.Add(this.label32);
@@ -931,6 +927,7 @@
             this.tabPage4.Controls.Add(this.rtLogging);
             this.tabPage4.Controls.Add(this.btnCheckBoundary);
             this.tabPage4.Controls.Add(this.btnClearQueryResults);
+            this.tabPage4.Controls.Add(this.btnRunAllQueries);
             this.tabPage4.Controls.Add(this.tbBoundaryDate);
             this.tabPage4.Controls.Add(this.label28);
             this.tabPage4.Controls.Add(this.label27);
@@ -972,24 +969,6 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Check WB Database";
             this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // btnCancelProcess
-            // 
-            this.btnCancelProcess.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelProcess.Location = new System.Drawing.Point(218, 391);
-            this.btnCancelProcess.Name = "btnCancelProcess";
-            this.btnCancelProcess.Size = new System.Drawing.Size(63, 29);
-            this.btnCancelProcess.TabIndex = 79;
-            this.btnCancelProcess.Text = "Cancel";
-            this.btnCancelProcess.UseVisualStyleBackColor = true;
-            this.btnCancelProcess.Click += new System.EventHandler(this.btnCancelProcess_Click);
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(12, 392);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(200, 28);
-            this.progressBar1.TabIndex = 78;
             // 
             // label34
             // 
@@ -1106,6 +1085,16 @@
             this.btnClearQueryResults.Text = "Clear Results";
             this.btnClearQueryResults.UseVisualStyleBackColor = true;
             this.btnClearQueryResults.Click += new System.EventHandler(this.btnClearQueryResults_Click);
+            // 
+            // btnRunAllQueries
+            // 
+            this.btnRunAllQueries.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRunAllQueries.Location = new System.Drawing.Point(166, 260);
+            this.btnRunAllQueries.Name = "btnRunAllQueries";
+            this.btnRunAllQueries.Size = new System.Drawing.Size(137, 30);
+            this.btnRunAllQueries.TabIndex = 65;
+            this.btnRunAllQueries.Text = "Run All Queries";
+            this.btnRunAllQueries.UseVisualStyleBackColor = true;
             // 
             // tbBoundaryDate
             // 
@@ -1494,26 +1483,6 @@
             this.webBrowser1.TabIndex = 69;
             this.webBrowser1.Url = new System.Uri("https://requestit.safeway.com/RequestCenter/default-login.jsp?NSA_LOGIN_NAME=", System.UriKind.Absolute);
             // 
-            // tabPage6
-            // 
-            this.tabPage6.BackColor = System.Drawing.Color.DarkGray;
-            this.tabPage6.Controls.Add(this.webBrowser2);
-            this.tabPage6.Location = new System.Drawing.Point(4, 26);
-            this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(694, 429);
-            this.tabPage6.TabIndex = 5;
-            this.tabPage6.Text = "Verify Job in ESP";
-            // 
-            // webBrowser2
-            // 
-            this.webBrowser2.Location = new System.Drawing.Point(6, 17);
-            this.webBrowser2.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser2.Name = "webBrowser2";
-            this.webBrowser2.Size = new System.Drawing.Size(682, 383);
-            this.webBrowser2.TabIndex = 70;
-            this.webBrowser2.Url = new System.Uri("https://uawa.safeway.com", System.UriKind.Absolute);
-            // 
             // label29
             // 
             this.label29.AutoSize = true;
@@ -1542,6 +1511,26 @@
             this.pictureBox1.Size = new System.Drawing.Size(730, 50);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            // 
+            // tabPage6
+            // 
+            this.tabPage6.BackColor = System.Drawing.Color.DarkGray;
+            this.tabPage6.Controls.Add(this.webBrowser2);
+            this.tabPage6.Location = new System.Drawing.Point(4, 26);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(694, 429);
+            this.tabPage6.TabIndex = 5;
+            this.tabPage6.Text = "Verify Job in ESP";
+            // 
+            // webBrowser2
+            // 
+            this.webBrowser2.Location = new System.Drawing.Point(6, 17);
+            this.webBrowser2.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser2.Name = "webBrowser2";
+            this.webBrowser2.Size = new System.Drawing.Size(682, 383);
+            this.webBrowser2.TabIndex = 70;
+            this.webBrowser2.Url = new System.Uri("https://uawa.safeway.com", System.UriKind.Absolute);
             // 
             // Form_MainForm
             // 
@@ -1581,9 +1570,9 @@
             this.tabPage4.PerformLayout();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
-            this.tabPage6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tabPage6.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1677,6 +1666,7 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Button btnCheckBoundary;
         private System.Windows.Forms.Button btnClearQueryResults;
+        private System.Windows.Forms.Button btnRunAllQueries;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.RichTextBox rtLogging;
@@ -1720,8 +1710,5 @@
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.TabPage tabPage6;
         private System.Windows.Forms.WebBrowser webBrowser2;
-        private System.Windows.Forms.ProgressBar progressBar1;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.Button btnCancelProcess;
     }
 }

@@ -45,8 +45,6 @@ namespace WorkbrainArchivingTool
         string strPrimaryWDA;
         string strPrimaryOVR;
 
-        public BackgroundWorker bgw;
-
         
         #endregion DECLARATIONS
 
@@ -865,10 +863,8 @@ namespace WorkbrainArchivingTool
         #region INDIVIDUAL BUTTON CLICK (WORKBRAIN DB QUERIES)
         private void btnCheckBoundary_Click(object sender, EventArgs e)
         {
-
-                //[gigne00] : Call here the query method
-            
-                   
+            queryBoundaryDate();
+            lblQueryDoneExecuting();            
         }
         private void btnQueryArchWS_Click(object sender, EventArgs e)
         {
@@ -1381,15 +1377,6 @@ namespace WorkbrainArchivingTool
             }
         }
         #endregion WEB BROWSER
-
-        private void btnCancelProcess_Click(object sender, EventArgs e)
-        {
-            if (backgroundWorker1.IsBusy)
-            {
-                //cancel the asynchronous ops
-                backgroundWorker1.CancelAsync();
-            }
-        }
 
     }
 }
