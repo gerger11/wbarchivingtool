@@ -30,6 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_MainForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.archivingTasksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutTheToolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutTheToolToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.startDate_DT = new System.Windows.Forms.DateTimePicker();
             this.endDate_DT = new System.Windows.Forms.DateTimePicker();
             this.tbStartDate = new System.Windows.Forms.TextBox();
@@ -40,6 +44,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.lblCopied2 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.rtArchiveOVR = new System.Windows.Forms.RichTextBox();
@@ -59,6 +64,7 @@
             this.rtArchiveWS = new System.Windows.Forms.RichTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.lblCopied3 = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.rtPrimaryOVR = new System.Windows.Forms.RichTextBox();
@@ -78,22 +84,36 @@
             this.rtPrimaryWS = new System.Windows.Forms.RichTextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.lblCopied = new System.Windows.Forms.Label();
+            this.button16 = new System.Windows.Forms.Button();
+            this.rtSelectEmpUDF = new System.Windows.Forms.RichTextBox();
+            this.label30 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.button13 = new System.Windows.Forms.Button();
             this.rtCheckBoundary = new System.Windows.Forms.RichTextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.button14 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
+            this.btnCpyEmpUDFData = new System.Windows.Forms.Button();
             this.rtUpdateRegistry = new System.Windows.Forms.RichTextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.rtUpdateEmpUDF = new System.Windows.Forms.RichTextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.btnCancelProcess = new System.Windows.Forms.Button();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.lblDeleted = new System.Windows.Forms.Label();
+            this.lblArchived = new System.Windows.Forms.Label();
+            this.btnQueryCountEmpUDF = new System.Windows.Forms.Button();
+            this.tbCountEmpUDF = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.lblQueryStat = new System.Windows.Forms.Label();
             this.rtLogging = new System.Windows.Forms.RichTextBox();
             this.btnCheckBoundary = new System.Windows.Forms.Button();
-            this.button29 = new System.Windows.Forms.Button();
-            this.btnRunAllQueries = new System.Windows.Forms.Button();
+            this.btnClearQueryResults = new System.Windows.Forms.Button();
             this.tbBoundaryDate = new System.Windows.Forms.TextBox();
             this.label28 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
@@ -128,19 +148,27 @@
             this.tbArchWS = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.tbRequestNo = new System.Windows.Forms.TextBox();
+            this.button15 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.webBrowser2 = new System.Windows.Forms.WebBrowser();
             this.label29 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.archivingTasksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutTheToolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutTheToolToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            this.tabPage5.SuspendLayout();
+            this.tabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -155,6 +183,34 @@
             this.menuStrip1.Size = new System.Drawing.Size(726, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // archivingTasksToolStripMenuItem
+            // 
+            this.archivingTasksToolStripMenuItem.Name = "archivingTasksToolStripMenuItem";
+            this.archivingTasksToolStripMenuItem.Size = new System.Drawing.Size(102, 20);
+            this.archivingTasksToolStripMenuItem.Text = "Archiving Tasks";
+            // 
+            // aboutTheToolToolStripMenuItem
+            // 
+            this.aboutTheToolToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aboutTheToolToolStripMenuItem1,
+            this.helpToolStripMenuItem});
+            this.aboutTheToolToolStripMenuItem.Name = "aboutTheToolToolStripMenuItem";
+            this.aboutTheToolToolStripMenuItem.Size = new System.Drawing.Size(99, 20);
+            this.aboutTheToolToolStripMenuItem.Text = "About the Tool";
+            // 
+            // aboutTheToolToolStripMenuItem1
+            // 
+            this.aboutTheToolToolStripMenuItem1.Name = "aboutTheToolToolStripMenuItem1";
+            this.aboutTheToolToolStripMenuItem1.Size = new System.Drawing.Size(151, 22);
+            this.aboutTheToolToolStripMenuItem1.Text = "About the tool";
+            this.aboutTheToolToolStripMenuItem1.Click += new System.EventHandler(this.aboutTheToolToolStripMenuItem1_Click);
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.helpToolStripMenuItem.Text = "Help";
             // 
             // startDate_DT
             // 
@@ -215,21 +271,21 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(189, 90);
+            this.label1.Location = new System.Drawing.Point(153, 90);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 17);
+            this.label1.Size = new System.Drawing.Size(109, 17);
             this.label1.TabIndex = 8;
-            this.label1.Text = "Start Date :";
+            this.label1.Text = "Week Start Date :";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(83, 113);
+            this.label2.Location = new System.Drawing.Point(158, 116);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(179, 17);
+            this.label2.Size = new System.Drawing.Size(104, 17);
             this.label2.TabIndex = 9;
-            this.label2.Text = "End Date (Week Ending Date:";
+            this.label2.Text = "Week End Date :";
             // 
             // tabControl1
             // 
@@ -237,15 +293,18 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage5);
+            this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(12, 175);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(702, 425);
+            this.tabControl1.Size = new System.Drawing.Size(702, 459);
             this.tabControl1.TabIndex = 10;
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.lblCopied2);
             this.tabPage1.Controls.Add(this.button5);
             this.tabPage1.Controls.Add(this.button6);
             this.tabPage1.Controls.Add(this.rtArchiveOVR);
@@ -267,10 +326,20 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 26);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(694, 395);
+            this.tabPage1.Size = new System.Drawing.Size(694, 429);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Queries - Archive Tables";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // lblCopied2
+            // 
+            this.lblCopied2.AutoSize = true;
+            this.lblCopied2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCopied2.Location = new System.Drawing.Point(4, 409);
+            this.lblCopied2.Name = "lblCopied2";
+            this.lblCopied2.Size = new System.Drawing.Size(38, 17);
+            this.lblCopied2.TabIndex = 44;
+            this.lblCopied2.Text = "------";
             // 
             // button5
             // 
@@ -281,6 +350,7 @@
             this.button5.TabIndex = 17;
             this.button5.Text = "Copy to Clipboard";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
@@ -291,6 +361,7 @@
             this.button6.TabIndex = 16;
             this.button6.Text = "Copy to Clipboard";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // rtArchiveOVR
             // 
@@ -339,6 +410,7 @@
             this.button3.TabIndex = 11;
             this.button3.Text = "Copy to Clipboard";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -349,6 +421,7 @@
             this.button4.TabIndex = 10;
             this.button4.Text = "Copy to Clipboard";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // rtArchiveEBL
             // 
@@ -397,6 +470,7 @@
             this.button2.TabIndex = 5;
             this.button2.Text = "Copy to Clipboard";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -407,6 +481,7 @@
             this.button1.TabIndex = 4;
             this.button1.Text = "Copy to Clipboard";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // rtArchiveWD
             // 
@@ -448,6 +523,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.lblCopied3);
             this.tabPage2.Controls.Add(this.button7);
             this.tabPage2.Controls.Add(this.button8);
             this.tabPage2.Controls.Add(this.rtPrimaryOVR);
@@ -469,10 +545,20 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 26);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(694, 395);
+            this.tabPage2.Size = new System.Drawing.Size(694, 429);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Queries - Primary Tables";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // lblCopied3
+            // 
+            this.lblCopied3.AutoSize = true;
+            this.lblCopied3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCopied3.Location = new System.Drawing.Point(4, 409);
+            this.lblCopied3.Name = "lblCopied3";
+            this.lblCopied3.Size = new System.Drawing.Size(38, 17);
+            this.lblCopied3.TabIndex = 45;
+            this.lblCopied3.Text = "------";
             // 
             // button7
             // 
@@ -483,6 +569,7 @@
             this.button7.TabIndex = 35;
             this.button7.Text = "Copy to Clipboard";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button8
             // 
@@ -493,6 +580,7 @@
             this.button8.TabIndex = 34;
             this.button8.Text = "Copy to Clipboard";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // rtPrimaryOVR
             // 
@@ -541,6 +629,7 @@
             this.button9.TabIndex = 29;
             this.button9.Text = "Copy to Clipboard";
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button10
             // 
@@ -551,6 +640,7 @@
             this.button10.TabIndex = 28;
             this.button10.Text = "Copy to Clipboard";
             this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // rtPrimaryEBL
             // 
@@ -599,6 +689,7 @@
             this.button11.TabIndex = 23;
             this.button11.Text = "Copy to Clipboard";
             this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // button12
             // 
@@ -609,6 +700,7 @@
             this.button12.TabIndex = 22;
             this.button12.Text = "Copy to Clipboard";
             this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // rtPrimaryWD
             // 
@@ -650,13 +742,17 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.lblCopied);
+            this.tabPage3.Controls.Add(this.button16);
+            this.tabPage3.Controls.Add(this.rtSelectEmpUDF);
+            this.tabPage3.Controls.Add(this.label30);
             this.tabPage3.Controls.Add(this.label19);
             this.tabPage3.Controls.Add(this.label18);
             this.tabPage3.Controls.Add(this.button13);
             this.tabPage3.Controls.Add(this.rtCheckBoundary);
             this.tabPage3.Controls.Add(this.label15);
             this.tabPage3.Controls.Add(this.button14);
-            this.tabPage3.Controls.Add(this.button15);
+            this.tabPage3.Controls.Add(this.btnCpyEmpUDFData);
             this.tabPage3.Controls.Add(this.rtUpdateRegistry);
             this.tabPage3.Controls.Add(this.label16);
             this.tabPage3.Controls.Add(this.rtUpdateEmpUDF);
@@ -664,10 +760,50 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 26);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(694, 395);
+            this.tabPage3.Size = new System.Drawing.Size(694, 429);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Queries - Updates";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // lblCopied
+            // 
+            this.lblCopied.AutoSize = true;
+            this.lblCopied.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCopied.Location = new System.Drawing.Point(6, 408);
+            this.lblCopied.Name = "lblCopied";
+            this.lblCopied.Size = new System.Drawing.Size(38, 17);
+            this.lblCopied.TabIndex = 43;
+            this.lblCopied.Text = "------";
+            // 
+            // button16
+            // 
+            this.button16.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button16.Location = new System.Drawing.Point(220, 308);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(119, 21);
+            this.button16.TabIndex = 42;
+            this.button16.Text = "Copy to Clipboard";
+            this.button16.UseVisualStyleBackColor = true;
+            this.button16.Click += new System.EventHandler(this.button16_Click);
+            // 
+            // rtSelectEmpUDF
+            // 
+            this.rtSelectEmpUDF.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtSelectEmpUDF.Location = new System.Drawing.Point(8, 209);
+            this.rtSelectEmpUDF.Name = "rtSelectEmpUDF";
+            this.rtSelectEmpUDF.Size = new System.Drawing.Size(331, 93);
+            this.rtSelectEmpUDF.TabIndex = 41;
+            this.rtSelectEmpUDF.Text = "";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(6, 193);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(141, 13);
+            this.label30.TabIndex = 40;
+            this.label30.Text = "Select Employee UDF Data";
             // 
             // label19
             // 
@@ -698,6 +834,7 @@
             this.button13.TabIndex = 38;
             this.button13.Text = "Copy to Clipboard";
             this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
             // rtCheckBoundary
             // 
@@ -727,16 +864,18 @@
             this.button14.TabIndex = 35;
             this.button14.Text = "Copy to Clipboard";
             this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
-            // button15
+            // btnCpyEmpUDFData
             // 
-            this.button15.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button15.Location = new System.Drawing.Point(220, 355);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(119, 21);
-            this.button15.TabIndex = 34;
-            this.button15.Text = "Copy to Clipboard";
-            this.button15.UseVisualStyleBackColor = true;
+            this.btnCpyEmpUDFData.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCpyEmpUDFData.Location = new System.Drawing.Point(220, 169);
+            this.btnCpyEmpUDFData.Name = "btnCpyEmpUDFData";
+            this.btnCpyEmpUDFData.Size = new System.Drawing.Size(119, 21);
+            this.btnCpyEmpUDFData.TabIndex = 34;
+            this.btnCpyEmpUDFData.Text = "Copy to Clipboard";
+            this.btnCpyEmpUDFData.UseVisualStyleBackColor = true;
+            this.btnCpyEmpUDFData.Click += new System.EventHandler(this.button15_Click);
             // 
             // rtUpdateRegistry
             // 
@@ -762,7 +901,7 @@
             this.rtUpdateEmpUDF.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtUpdateEmpUDF.Location = new System.Drawing.Point(8, 22);
             this.rtUpdateEmpUDF.Name = "rtUpdateEmpUDF";
-            this.rtUpdateEmpUDF.Size = new System.Drawing.Size(331, 327);
+            this.rtUpdateEmpUDF.Size = new System.Drawing.Size(331, 141);
             this.rtUpdateEmpUDF.TabIndex = 31;
             this.rtUpdateEmpUDF.Text = "";
             // 
@@ -778,10 +917,20 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.btnCancelProcess);
+            this.tabPage4.Controls.Add(this.progressBar1);
+            this.tabPage4.Controls.Add(this.label34);
+            this.tabPage4.Controls.Add(this.label33);
+            this.tabPage4.Controls.Add(this.label32);
+            this.tabPage4.Controls.Add(this.lblDeleted);
+            this.tabPage4.Controls.Add(this.lblArchived);
+            this.tabPage4.Controls.Add(this.btnQueryCountEmpUDF);
+            this.tabPage4.Controls.Add(this.tbCountEmpUDF);
+            this.tabPage4.Controls.Add(this.label31);
+            this.tabPage4.Controls.Add(this.lblQueryStat);
             this.tabPage4.Controls.Add(this.rtLogging);
             this.tabPage4.Controls.Add(this.btnCheckBoundary);
-            this.tabPage4.Controls.Add(this.button29);
-            this.tabPage4.Controls.Add(this.btnRunAllQueries);
+            this.tabPage4.Controls.Add(this.btnClearQueryResults);
             this.tabPage4.Controls.Add(this.tbBoundaryDate);
             this.tabPage4.Controls.Add(this.label28);
             this.tabPage4.Controls.Add(this.label27);
@@ -819,16 +968,120 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 26);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(694, 395);
+            this.tabPage4.Size = new System.Drawing.Size(694, 429);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Check WB Database";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // btnCancelProcess
+            // 
+            this.btnCancelProcess.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelProcess.Location = new System.Drawing.Point(218, 391);
+            this.btnCancelProcess.Name = "btnCancelProcess";
+            this.btnCancelProcess.Size = new System.Drawing.Size(63, 29);
+            this.btnCancelProcess.TabIndex = 79;
+            this.btnCancelProcess.Text = "Cancel";
+            this.btnCancelProcess.UseVisualStyleBackColor = true;
+            this.btnCancelProcess.Click += new System.EventHandler(this.btnCancelProcess_Click);
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(12, 392);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(200, 28);
+            this.progressBar1.TabIndex = 78;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.Location = new System.Drawing.Point(15, 370);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(81, 17);
+            this.label34.TabIndex = 77;
+            this.label34.Text = "PRIMSTAT : ";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.Location = new System.Drawing.Point(12, 353);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(84, 17);
+            this.label33.TabIndex = 76;
+            this.label33.Text = "ARCHSTAT : ";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.Location = new System.Drawing.Point(280, 407);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(404, 13);
+            this.label32.TabIndex = 75;
+            this.label32.Text = "*Note : Query results are based upon the selected Start and End dates above.";
+            // 
+            // lblDeleted
+            // 
+            this.lblDeleted.AutoSize = true;
+            this.lblDeleted.Location = new System.Drawing.Point(93, 372);
+            this.lblDeleted.Name = "lblDeleted";
+            this.lblDeleted.Size = new System.Drawing.Size(38, 17);
+            this.lblDeleted.TabIndex = 74;
+            this.lblDeleted.Text = "------";
+            // 
+            // lblArchived
+            // 
+            this.lblArchived.AutoSize = true;
+            this.lblArchived.Location = new System.Drawing.Point(93, 354);
+            this.lblArchived.Name = "lblArchived";
+            this.lblArchived.Size = new System.Drawing.Size(38, 17);
+            this.lblArchived.TabIndex = 73;
+            this.lblArchived.Text = "------";
+            // 
+            // btnQueryCountEmpUDF
+            // 
+            this.btnQueryCountEmpUDF.Location = new System.Drawing.Point(283, 300);
+            this.btnQueryCountEmpUDF.Name = "btnQueryCountEmpUDF";
+            this.btnQueryCountEmpUDF.Size = new System.Drawing.Size(20, 26);
+            this.btnQueryCountEmpUDF.TabIndex = 72;
+            this.btnQueryCountEmpUDF.Text = "Q";
+            this.btnQueryCountEmpUDF.UseVisualStyleBackColor = true;
+            this.btnQueryCountEmpUDF.Click += new System.EventHandler(this.btnQueryCountEmpUDF_Click);
+            this.btnQueryCountEmpUDF.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnQueryCountEmpUDF_MouseDown);
+            // 
+            // tbCountEmpUDF
+            // 
+            this.tbCountEmpUDF.Location = new System.Drawing.Point(166, 301);
+            this.tbCountEmpUDF.Name = "tbCountEmpUDF";
+            this.tbCountEmpUDF.Size = new System.Drawing.Size(115, 25);
+            this.tbCountEmpUDF.TabIndex = 71;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.Location = new System.Drawing.Point(12, 304);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(151, 17);
+            this.label31.TabIndex = 70;
+            this.label31.Text = "Count Emp UDF Record";
+            // 
+            // lblQueryStat
+            // 
+            this.lblQueryStat.AutoSize = true;
+            this.lblQueryStat.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQueryStat.Location = new System.Drawing.Point(12, 334);
+            this.lblQueryStat.Name = "lblQueryStat";
+            this.lblQueryStat.Size = new System.Drawing.Size(38, 17);
+            this.lblQueryStat.TabIndex = 69;
+            this.lblQueryStat.Text = "------";
             // 
             // rtLogging
             // 
             this.rtLogging.Location = new System.Drawing.Point(470, 14);
             this.rtLogging.Name = "rtLogging";
-            this.rtLogging.Size = new System.Drawing.Size(209, 363);
+            this.rtLogging.Size = new System.Drawing.Size(209, 374);
             this.rtLogging.TabIndex = 68;
             this.rtLogging.Text = "";
             // 
@@ -841,26 +1094,18 @@
             this.btnCheckBoundary.Text = "Q";
             this.btnCheckBoundary.UseVisualStyleBackColor = true;
             this.btnCheckBoundary.Click += new System.EventHandler(this.btnCheckBoundary_Click);
+            this.btnCheckBoundary.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnCheckBoundary_MouseDown);
             // 
-            // button29
+            // btnClearQueryResults
             // 
-            this.button29.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button29.Location = new System.Drawing.Point(321, 260);
-            this.button29.Name = "button29";
-            this.button29.Size = new System.Drawing.Size(137, 30);
-            this.button29.TabIndex = 66;
-            this.button29.Text = "Clear Results";
-            this.button29.UseVisualStyleBackColor = true;
-            // 
-            // btnRunAllQueries
-            // 
-            this.btnRunAllQueries.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRunAllQueries.Location = new System.Drawing.Point(166, 260);
-            this.btnRunAllQueries.Name = "btnRunAllQueries";
-            this.btnRunAllQueries.Size = new System.Drawing.Size(137, 30);
-            this.btnRunAllQueries.TabIndex = 65;
-            this.btnRunAllQueries.Text = "Run All Queries";
-            this.btnRunAllQueries.UseVisualStyleBackColor = true;
+            this.btnClearQueryResults.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClearQueryResults.Location = new System.Drawing.Point(321, 260);
+            this.btnClearQueryResults.Name = "btnClearQueryResults";
+            this.btnClearQueryResults.Size = new System.Drawing.Size(137, 30);
+            this.btnClearQueryResults.TabIndex = 66;
+            this.btnClearQueryResults.Text = "Clear Results";
+            this.btnClearQueryResults.UseVisualStyleBackColor = true;
+            this.btnClearQueryResults.Click += new System.EventHandler(this.btnClearQueryResults_Click);
             // 
             // tbBoundaryDate
             // 
@@ -948,6 +1193,7 @@
             this.btnQueryPrimOVR.Text = "Q";
             this.btnQueryPrimOVR.UseVisualStyleBackColor = true;
             this.btnQueryPrimOVR.Click += new System.EventHandler(this.btnQueryPrimOVR_Click);
+            this.btnQueryPrimOVR.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnQueryPrimOVR_MouseDown);
             // 
             // btnQueryArchOVR
             // 
@@ -958,6 +1204,7 @@
             this.btnQueryArchOVR.Text = "Q";
             this.btnQueryArchOVR.UseVisualStyleBackColor = true;
             this.btnQueryArchOVR.Click += new System.EventHandler(this.btnQueryArchOVR_Click);
+            this.btnQueryArchOVR.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnQueryArchOVR_MouseDown);
             // 
             // tbPrimOVR
             // 
@@ -982,6 +1229,7 @@
             this.btnQueryPrimWDA.Text = "Q";
             this.btnQueryPrimWDA.UseVisualStyleBackColor = true;
             this.btnQueryPrimWDA.Click += new System.EventHandler(this.btnQueryPrimWDA_Click);
+            this.btnQueryPrimWDA.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnQueryPrimWDA_MouseDown);
             // 
             // btnQueryArchWDA
             // 
@@ -992,6 +1240,7 @@
             this.btnQueryArchWDA.Text = "Q";
             this.btnQueryArchWDA.UseVisualStyleBackColor = true;
             this.btnQueryArchWDA.Click += new System.EventHandler(this.btnQueryArchWDA_Click);
+            this.btnQueryArchWDA.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnQueryArchWDA_MouseDown);
             // 
             // tbPrimWDA
             // 
@@ -1016,6 +1265,7 @@
             this.btnQueryPrimEBL.Text = "Q";
             this.btnQueryPrimEBL.UseVisualStyleBackColor = true;
             this.btnQueryPrimEBL.Click += new System.EventHandler(this.btnQueryPrimEBL_Click);
+            this.btnQueryPrimEBL.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnQueryPrimEBL_MouseDown);
             // 
             // btnQueryArchEBL
             // 
@@ -1026,6 +1276,7 @@
             this.btnQueryArchEBL.Text = "Q";
             this.btnQueryArchEBL.UseVisualStyleBackColor = true;
             this.btnQueryArchEBL.Click += new System.EventHandler(this.btnQueryArchEBL_Click);
+            this.btnQueryArchEBL.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnQueryArchEBL_MouseDown);
             // 
             // tbPrimEBL
             // 
@@ -1050,6 +1301,7 @@
             this.btnQueryPrimCTP.Text = "Q";
             this.btnQueryPrimCTP.UseVisualStyleBackColor = true;
             this.btnQueryPrimCTP.Click += new System.EventHandler(this.btnQueryPrimCTP_Click);
+            this.btnQueryPrimCTP.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnQueryPrimCTP_MouseDown);
             // 
             // btnQueryArchCTP
             // 
@@ -1060,6 +1312,7 @@
             this.btnQueryArchCTP.Text = "Q";
             this.btnQueryArchCTP.UseVisualStyleBackColor = true;
             this.btnQueryArchCTP.Click += new System.EventHandler(this.btnQueryArchCTP_Click);
+            this.btnQueryArchCTP.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnQueryArchCTP_MouseDown);
             // 
             // tbPrimCTP
             // 
@@ -1084,6 +1337,7 @@
             this.btnQueryPrimWD.Text = "Q";
             this.btnQueryPrimWD.UseVisualStyleBackColor = true;
             this.btnQueryPrimWD.Click += new System.EventHandler(this.btnQueryPrimWD_Click);
+            this.btnQueryPrimWD.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnQueryPrimWD_MouseDown);
             // 
             // btnQueryArchWD
             // 
@@ -1094,6 +1348,7 @@
             this.btnQueryArchWD.Text = "Q";
             this.btnQueryArchWD.UseVisualStyleBackColor = true;
             this.btnQueryArchWD.Click += new System.EventHandler(this.btnQueryArchWD_Click);
+            this.btnQueryArchWD.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnQueryArchWD_MouseDown);
             // 
             // tbPrimWD
             // 
@@ -1118,6 +1373,7 @@
             this.btnQueryPrimWS.Text = "Q";
             this.btnQueryPrimWS.UseVisualStyleBackColor = true;
             this.btnQueryPrimWS.Click += new System.EventHandler(this.btnQueryPrimWS_Click);
+            this.btnQueryPrimWS.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnQueryPrimWS_MouseDown);
             // 
             // btnQueryArchWS
             // 
@@ -1128,6 +1384,7 @@
             this.btnQueryArchWS.Text = "Q";
             this.btnQueryArchWS.UseVisualStyleBackColor = true;
             this.btnQueryArchWS.Click += new System.EventHandler(this.btnQueryArchWS_Click);
+            this.btnQueryArchWS.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnQueryArchWS_MouseDown);
             // 
             // tbPrimWS
             // 
@@ -1163,12 +1420,106 @@
             this.label20.TabIndex = 31;
             this.label20.Text = "Archive Table";
             // 
+            // tabPage5
+            // 
+            this.tabPage5.BackColor = System.Drawing.Color.DarkGray;
+            this.tabPage5.Controls.Add(this.tbRequestNo);
+            this.tabPage5.Controls.Add(this.button15);
+            this.tabPage5.Controls.Add(this.comboBox1);
+            this.tabPage5.Controls.Add(this.label36);
+            this.tabPage5.Controls.Add(this.label35);
+            this.tabPage5.Controls.Add(this.webBrowser1);
+            this.tabPage5.Location = new System.Drawing.Point(4, 26);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(694, 429);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "ODR";
+            // 
+            // tbRequestNo
+            // 
+            this.tbRequestNo.Location = new System.Drawing.Point(140, 400);
+            this.tbRequestNo.Name = "tbRequestNo";
+            this.tbRequestNo.Size = new System.Drawing.Size(100, 25);
+            this.tbRequestNo.TabIndex = 75;
+            // 
+            // button15
+            // 
+            this.button15.Location = new System.Drawing.Point(593, 399);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(96, 29);
+            this.button15.TabIndex = 74;
+            this.button15.Text = "Log to File";
+            this.button15.UseVisualStyleBackColor = true;
+            this.button15.Click += new System.EventHandler(this.button15_Click_1);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "EXPORT - TAWWB02001",
+            "IMPORT - TAWWB02002",
+            "EXPORT/IMPORT - TAWWB02003",
+            "DELETE - TAWWB02004"});
+            this.comboBox1.Location = new System.Drawing.Point(356, 400);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(195, 25);
+            this.comboBox1.TabIndex = 73;
+            this.comboBox1.Text = "--Select Job--";
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(247, 404);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(102, 17);
+            this.label36.TabIndex = 72;
+            this.label36.Text = "Requested Job :";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(7, 404);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(135, 17);
+            this.label35.TabIndex = 70;
+            this.label35.Text = "Requisition Number : ";
+            // 
+            // webBrowser1
+            // 
+            this.webBrowser1.Location = new System.Drawing.Point(6, 14);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.Size = new System.Drawing.Size(682, 383);
+            this.webBrowser1.TabIndex = 69;
+            this.webBrowser1.Url = new System.Uri("https://requestit.safeway.com/RequestCenter/default-login.jsp?NSA_LOGIN_NAME=", System.UriKind.Absolute);
+            // 
+            // tabPage6
+            // 
+            this.tabPage6.BackColor = System.Drawing.Color.DarkGray;
+            this.tabPage6.Controls.Add(this.webBrowser2);
+            this.tabPage6.Location = new System.Drawing.Point(4, 26);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(694, 429);
+            this.tabPage6.TabIndex = 5;
+            this.tabPage6.Text = "Verify Job in ESP";
+            // 
+            // webBrowser2
+            // 
+            this.webBrowser2.Location = new System.Drawing.Point(6, 17);
+            this.webBrowser2.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser2.Name = "webBrowser2";
+            this.webBrowser2.Size = new System.Drawing.Size(682, 383);
+            this.webBrowser2.TabIndex = 70;
+            this.webBrowser2.Url = new System.Uri("https://uawa.safeway.com", System.UriKind.Absolute);
+            // 
             // label29
             // 
             this.label29.AutoSize = true;
             this.label29.BackColor = System.Drawing.Color.Black;
             this.label29.ForeColor = System.Drawing.Color.White;
-            this.label29.Location = new System.Drawing.Point(33, 621);
+            this.label29.Location = new System.Drawing.Point(33, 644);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(41, 13);
             this.label29.TabIndex = 68;
@@ -1177,7 +1528,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::WorkbrainArchivingTool.Properties.Resources.ArchivingFooter;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 618);
+            this.pictureBox2.Location = new System.Drawing.Point(0, 640);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(776, 20);
             this.pictureBox2.TabIndex = 11;
@@ -1192,38 +1543,11 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // archivingTasksToolStripMenuItem
-            // 
-            this.archivingTasksToolStripMenuItem.Name = "archivingTasksToolStripMenuItem";
-            this.archivingTasksToolStripMenuItem.Size = new System.Drawing.Size(102, 20);
-            this.archivingTasksToolStripMenuItem.Text = "Archiving Tasks";
-            // 
-            // aboutTheToolToolStripMenuItem
-            // 
-            this.aboutTheToolToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aboutTheToolToolStripMenuItem1,
-            this.helpToolStripMenuItem});
-            this.aboutTheToolToolStripMenuItem.Name = "aboutTheToolToolStripMenuItem";
-            this.aboutTheToolToolStripMenuItem.Size = new System.Drawing.Size(96, 20);
-            this.aboutTheToolToolStripMenuItem.Text = "About the tool";
-            // 
-            // aboutTheToolToolStripMenuItem1
-            // 
-            this.aboutTheToolToolStripMenuItem1.Name = "aboutTheToolToolStripMenuItem1";
-            this.aboutTheToolToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.aboutTheToolToolStripMenuItem1.Text = "About the tool";
-            // 
-            // helpToolStripMenuItem
-            // 
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.helpToolStripMenuItem.Text = "Help";
-            // 
             // Form_MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(726, 637);
+            this.ClientSize = new System.Drawing.Size(726, 660);
             this.Controls.Add(this.label29);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.tabControl1);
@@ -1237,8 +1561,10 @@
             this.Controls.Add(this.startDate_DT);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "Form_MainForm";
             this.Text = "Safeway Manila - Workbrain Archiving Tool";
             this.Load += new System.EventHandler(this.Form_MainForm_Load);
@@ -1253,6 +1579,9 @@
             this.tabPage3.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
+            this.tabPage6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -1279,7 +1608,6 @@
         private System.Windows.Forms.RichTextBox rtArchiveWS;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
@@ -1313,17 +1641,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.RichTextBox rtPrimaryWS;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.RichTextBox rtCheckBoundary;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Button button15;
-        private System.Windows.Forms.RichTextBox rtUpdateRegistry;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.RichTextBox rtUpdateEmpUDF;
-        private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox tbBoundaryDate;
         private System.Windows.Forms.Label label28;
@@ -1359,8 +1676,7 @@
         private System.Windows.Forms.TextBox tbArchWS;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Button btnCheckBoundary;
-        private System.Windows.Forms.Button button29;
-        private System.Windows.Forms.Button btnRunAllQueries;
+        private System.Windows.Forms.Button btnClearQueryResults;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.RichTextBox rtLogging;
@@ -1368,5 +1684,44 @@
         private System.Windows.Forms.ToolStripMenuItem aboutTheToolToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutTheToolToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.Label lblQueryStat;
+        private System.Windows.Forms.Button btnQueryCountEmpUDF;
+        private System.Windows.Forms.TextBox tbCountEmpUDF;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label lblDeleted;
+        private System.Windows.Forms.Label lblArchived;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label lblCopied2;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.Label lblCopied;
+        private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.RichTextBox rtSelectEmpUDF;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.RichTextBox rtCheckBoundary;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button btnCpyEmpUDFData;
+        private System.Windows.Forms.RichTextBox rtUpdateRegistry;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.RichTextBox rtUpdateEmpUDF;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label lblCopied3;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.WebBrowser webBrowser1;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.TextBox tbRequestNo;
+        private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.TabPage tabPage6;
+        private System.Windows.Forms.WebBrowser webBrowser2;
+        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Button btnCancelProcess;
     }
 }
